@@ -5,7 +5,7 @@ import numpy as np
 import SimpleITK as sitk
 
 #Functions from other scripts
-from display import display 
+from display import * 
 from resample import resample
 from globalReg import *
 from localReg import elasticReg
@@ -20,8 +20,9 @@ im_id = 0   #specifies image of interest (ie will be displayed)
 
 core_path = '/home/sebastian/'
 
-file_list = []
+file_list = []              #creates a list of paths to heads
 
+#current heads of interest
 file_list.append( core_path + 'CQ500-CT-309/CQ500CT309_CQ500CT309/Unknown_Study/CT_PLAIN_THIN' )
 file_list.append( core_path + 'CQ500-CT-135/CQ500CT135_CQ500CT135/Unknown_Study/CT_PLAIN_THIN' )
 file_list.append( core_path + 'CQ500-CT-38/CQ500CT38_CQ500CT38/Unknown_Study/CT_PLAIN_THIN' )
@@ -61,8 +62,18 @@ for n in range (1):
     resampled_im = resample(im, dimension, target_spacing)  #calls resample function
     vectorOfResamp.push_back(resampled_im)
     
+# # 4. Declutter Image
+
+# vectorOfDeclut = sitk.VectorOfImage()              #creates a container to save locally registered images
+
+# for n in range (1):
+# #for n in range (len(vectorOfImages)):
+#     im = vectorOfResamp[n] 
+#     display(im)
+#     declutIm = declutter(im)
+#     vectorOfDeclut.push_back(declutIm)
     
-# 4. Global registration
+# 5. Global registration
 
 alpha3D = getAlpha3D()                               #gets alpha3D template model
 
@@ -74,16 +85,6 @@ for n in range (1):
     rigid_reg_im = rigidReg(im, alpha3D) 
     vectorOfRigidReg.push_back(rigid_reg_im)
 
-# 5. Declutter Image
-
-# vectorOfDeclut = sitk.VectorOfImage()              #creates a container to save locally registered images
-
-# for n in range (1):
-# #for n in range (len(vectorOfImages)):
-#     im = vectorOfRigidReg[n] 
-#     display(im)
-#     declutIm = declutter(im)
-#     vectorOfDeclut.push_back(declutIm)
 
 # 6. Local Registration
 
@@ -91,14 +92,20 @@ vectorOfLocalReg = sitk.VectorOfImage()              #creates a container to sav
 
 for n in range (1):
 #for n in range (len(vectorOfImages)):
-    im = vectorOfDeclut[n]
+    im = vectorOfRigidReg[n]
     deformField = elasticReg(im, alpha3D) 
     vectorOfLocalReg.push_back(deformField)
  
 display(alpha3D)
+display4D(deformField)
 
-checkShape(im, deformField)
+# 7. Saving deformation field
 
+for n in range (1):
+#for n in range (len(vectorOfImages)):
+    df = vectorOfLocalReg[n]
+    df = sitk.GetArrayFromImage(df)
+    model[n] = df.ravel()                           #converts 4D array to 1D column
 
 
 

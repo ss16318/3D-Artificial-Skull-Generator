@@ -47,7 +47,6 @@ def elasticReg ( im , alpha3D):
     warper.SetOutputParameteresFromImage(deformationField)
     out = warper.Execute(im,deformationField)
 
-    display(out)
     compare(out,elasticRegIm)
     
     

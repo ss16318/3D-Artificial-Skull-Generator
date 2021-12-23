@@ -151,3 +151,16 @@ runfile('/home/sebastian/.config/spyder-py3/localReg.py', wdir='/home/sebastian/
 runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Mon Dec 20 13:03:59 2021)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+display(deformField(:,:,:,1))
+display(deformField[:,:,:,1]]
+display(deformField[:,:,:,1])
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+np.concatenate(df,3)
+np.concatenate(df,0)
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
