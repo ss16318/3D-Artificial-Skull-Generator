@@ -164,3 +164,57 @@ runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian
 debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/localReg.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/localReg.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Dec 24 11:22:59 2021)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/localReg.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Dec 24 13:04:14 2021)---
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Dec 24 13:39:54 2021)---
+runfile('/home/sebastian/.config/spyder-py3/localReg.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Dec 24 14:09:59 2021)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Dec 24 14:42:50 2021)---
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Dec 28 19:43:52 2021)---
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/alpha3D.py', wdir='/home/sebastian/.config/spyder-py3')
+runcell(0, '/home/sebastian/.config/spyder-py3/alpha3D.py')
+runfile('/home/sebastian/.config/spyder-py3/alpha3D.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Dec 28 19:52:43 2021)---
+runfile('/home/sebastian/.config/spyder-py3/alpha3D.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Dec 29 09:46:47 2021)---
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Dec 29 10:30:57 2021)---
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Dec 29 12:49:17 2021)---
+runfile('/home/sebastian/.config/spyder-py3/display.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+alpha3D.getSize()
+alpha3D.GetSize()
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Sun Jan  2 22:53:49 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')

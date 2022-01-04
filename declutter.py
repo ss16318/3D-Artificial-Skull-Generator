@@ -5,11 +5,12 @@ import SimpleITK as sitk
 
 from display import display
 
-def declutter(im):
+def declutter(im, Title):
 
-    imArray = sitk.GetArrayFromImage(im)
-    imArray[imArray<0] = -1000
-    declutIm = sitk.GetImageFromArray(imArray)
-    display(declutIm)
+    imArray = sitk.GetArrayFromImage(im)            #converts image to array
+    imArray[imArray<0] = -1000                      # sets all array values less than 0 to -1000
+    declutIm = sitk.GetImageFromArray(imArray)      #reconstructs image
+    display(declutIm, Title)
+    display(im, Title)
     
     return declutIm

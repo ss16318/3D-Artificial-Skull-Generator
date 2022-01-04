@@ -5,7 +5,7 @@ import SimpleITK as sitk
 from display import display
 from check import compare
 
-# Non-rigid Registration 1
+# Non-rigid Registration
 def elasticReg ( im , alpha3D):
     parameterMap = sitk.GetDefaultParameterMap("bspline")                                         # parameterMap.items()
     
@@ -17,37 +17,35 @@ def elasticReg ( im , alpha3D):
     parameterMap['NumberOfResolutions'] = ("6",)
     parameterMap["DefaultPixelValue"] = ["-1000"]
     parameterMap['NumberOfSpatialSamples'] = [str((alpha3D.GetSize()[0]*alpha3D.GetSize()[1]*alpha3D.GetSize()[2])/5000)]
-    parameterMap['GridSpacingSchedule'] = ('16.0' , '16.0' , '16.0' , '16.0' , '16.0' , '16.0')
+    parameterMap['GridSpacingSchedule'] = ('16.0' , '8.0' , '8.0' , '4.0' , '2.0' , '1.0')
     parameterMap.asdict()
 
     elastixImageFilter = sitk.ElastixImageFilter()                                                   #does the registration
     elastixImageFilter.SetParameterMap(parameterMap)
-    elastixImageFilter.SetFixedImage(alpha3D)
-    elastixImageFilter.SetMovingImage(im)
+    elastixImageFilter.SetFixedImage(im)
+    elastixImageFilter.SetMovingImage(alpha3D)
     elastixImageFilter.LogToFileOn()
     elastixImageFilter.Execute()
     
     elasticRegIm = elastixImageFilter.GetResultImage()
     
-    display(elasticRegIm)
+    display(elasticRegIm , "FFD of Model Skull")
+    compare(elasticRegIm, im , "FFD result - input skull")
     
+    # Exctracting deformation field of elastic registration
     transformixImageFilter = sitk.TransformixImageFilter()
-    transformixImageFilter.SetMovingImage(im)  
+    transformixImageFilter.SetMovingImage(alpha3D)  
     transformixImageFilter.SetTransformParameterMap(elastixImageFilter.GetTransformParameterMap())
     transformixImageFilter.ComputeDeformationFieldOn()
     transformixImageFilter.LogToConsoleOn()
-    #transformixImageFilter.SetOutputDirectory("/home/sebastian/Documents/Deformations/")
     transformixImageFilter.Execute()
-    #sitk.WriteImage(transformixImageFilter.GetDeformationField(), "/home/sebastian/Documents/Deformations/transformix_rigid_affine_bspline.dcm.gz")
     deformationField = transformixImageFilter.GetDeformationField()
-    display(deformationField)
-    
     
     warper = sitk.WarpImageFilter()
     warper.SetOutputParameteresFromImage(deformationField)
-    out = warper.Execute(im,deformationField)
+    out = warper.Execute(alpha3D,deformationField)
 
-    compare(out,elasticRegIm)
+    compare(out,elasticRegIm , "Reconstruction compared to actual image")
     
     
     return deformationField

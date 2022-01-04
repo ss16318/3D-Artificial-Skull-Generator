@@ -1,6 +1,8 @@
 import numpy as np
 import SimpleITK as sitk
 
+from display import display
+
 def getAlpha3D():
 
     #builds path to alpha3D and loads image array
@@ -9,6 +11,7 @@ def getAlpha3D():
     
     #adjusts image for registration (via numpy package)
     alpha3D = np.rot90( alpha3D, 1, (2,1))                 # rotate Alpha 3D rot90(array,#times,plane of rotation)
+    alpha3D = np.flip(alpha3D,axis=1)                      # flips image to match input data
     alpha3D -= 1480                                        # roughly transforms [m s^-1] to [HU]
     default_value = -1000                                  # HU for air = -1000
     alpha3D[alpha3D==0] = default_value    
@@ -21,6 +24,7 @@ def getAlpha3D():
     
     return alpha3D_image 
 
+#RABBIT HOLE OF SHAPE DIFFERENCES BETWEEN ALPHA 3D AND INPUT HEAD
 
 # PASTE IDEA
     # base_im = sitk.GetImageFromArray(np.ones((600,600,600)))      # Create the output image space

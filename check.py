@@ -26,11 +26,14 @@ def checkShape( im1 , im2):
 # THE RESULTING IMAGE. IT CAN BE USED TO MEASURE DIFFERENCE TO MODEL OR
 # THE DIFFERENCES PRE AND POST TRANSFORMATION
 
-def compare(im1, im2):
+def compare(im1, im2 , Title):
 
     diffIm = im1 - im2  # note im2 is subtracted!
 
-    return display(diffIm)
+    return display(diffIm , Title)
+
+
+
 
 
 

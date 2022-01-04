@@ -23,7 +23,7 @@ def rigidReg( im , alpha3D):
     elastixImageFilter.SetMovingImage(im)
     elastixImageFilter.LogToFileOn()
     elastixImageFilter.Execute()
-    
+
     return elastixImageFilter.GetResultImage()
 
 
