@@ -28,7 +28,7 @@ def checkShape( im1 , im2):
 
 def compare(im1, im2 , Title):
 
-    diffIm = im1 - im2  # note im2 is subtracted!
+    diffIm = im1 - im2  #note im2 is subtracted!
 
     return display(diffIm , Title)
 

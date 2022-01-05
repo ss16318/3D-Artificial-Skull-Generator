@@ -218,3 +218,43 @@ runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.conf
 ## ---(Sun Jan  2 22:53:49 2022)---
 debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
 debugfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan  4 13:01:28 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan  4 15:19:22 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+x = reconstruct(alpha3D,vectorofDFM[0])
+x = reconstruct(alpha3D,vectorOfDFM[0])
+compare(x,vectorOfFFD[0])
+compare(x,vectorOfFFD[0],"Test")
+size = np.shape(sitk.GetArrayFromImage(vectorOfDFM[0]))
+cols = size[0]*size[1]*size[2]*size[3]
+defMatrix = np.zeros((len(vectorOfDFM), cols))
+dfm = sitk.GetArrayFromImage(vectorOfDFM[n])
+dfm.ravel()
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+row = np.ravel(dfm)
+defMatrix[n,:] = row
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan  4 15:49:47 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+for n in range (len(vectorOfDFM)):
+      dfm = sitk.GetArrayFromImage(vectorOfDFM[n])    #converts DFM to 4D array
+  print('3')
+  row = np.ravel(dfm)                             #converts 4D array to 1D column
+  print('4')
+  defMatrix[n,:] = row
+  print('5')
+
+print('6')
+np.save("sample.npy", defMatrix)
+
+print('7')
+test = np.load("sample.npy")
+print(test)
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Jan  5 11:48:30 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
