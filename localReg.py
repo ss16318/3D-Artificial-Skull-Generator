@@ -43,3 +43,6 @@ def ffd ( im , alpha3D):
     
     return FFDIm , DFM
 
+
+
+
