@@ -133,7 +133,7 @@ first_time = True
 mute_inline_plotting = True
 show_plot_outline = True
 auto_fit_plotting = True
-save_dir = /home/sebastian/Documents/Images
+save_dir = /home/sebastian/Documents/Report Images
 
 [editor]
 printer_header/font/family = ['Ubuntu', 'Sans Serif', 'DejaVu Sans', 'Bitstream Vera Sans', 'Bitstream Charter', 'Lucida Grande', 'MS Shell Dlg 2', 'Calibri', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', 'Times', 'sans-serif']

@@ -261,3 +261,72 @@ runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.conf
 
 ## ---(Sun Jan  9 19:16:32 2022)---
 runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Mon Jan 10 09:56:08 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Jan 12 12:54:01 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+display4D(vectorOfDFM[0]," (b) Toward Affinely-Registered Image")
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Jan 12 17:28:06 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+display(vectorOfFFD[0],"")
+
+## ---(Thu Jan 13 11:04:22 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+writer.SetFileName("DFMs/DFM" + str(n) )
+writer.Execute(vectorOfDFM[n])
+reader = sitk.ImageFileReader()
+reader.SetImageIO(vectorOfDFM[n])
+reader.SetImageIO(vectorOfDFM[0])
+
+## ---(Thu Jan 13 15:29:03 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+sitk.WriteImage(vectorOfDFM[n], "DFMs/test.nii")
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/findSkull.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/findSkull.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/findSkull.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/findSkull.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/findSkull.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/findSkull.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+start = np.array(elastixImageFilter.GetTransformParameterMap().GetOrigin())
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+elastixImageFilter.GetTransformParamterMap()
+debugfile('/home/sebastian/.config/spyder-py3/localReg.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Mon Jan 17 17:32:42 2022)---
+runfile('/home/sebastian/.config/spyder-py3/data.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan 18 09:39:42 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/defMatrix.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan 18 10:21:38 2022)---
+runfile('/home/sebastian/.config/spyder-py3/defMatrix.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan 18 10:27:54 2022)---
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')

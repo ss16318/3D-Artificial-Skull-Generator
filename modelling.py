@@ -1,12 +1,13 @@
-# Modelling
+## MODELLING
 
-import numpy as np
+from defMatrix import createMatrix
+import os
 
-maps = np.load("sample.npy")
+# 1. Create deformation matrix 
+files = os.listdir('/home/sebastian/.config/spyder-py3/Parameters')  #lists files in directory
+num = len(files) #counts files in list
 
-mean_map_vector = np.mean(maps, axis=0 , dtype=np.float32)
-
-mean_maps = mean_map_vector.reshape(345, 430, 496 , 3)
+defMatrix = createMatrix(num)
 
 
 
