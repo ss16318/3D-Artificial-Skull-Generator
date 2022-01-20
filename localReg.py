@@ -36,14 +36,4 @@ def ffd ( im , alpha3D, num):
     shutil.copyfile(original,target)   #copies original data and saves in target
                                            
     return FFDIm
-
-
-    # #EXTRACTING DFMs
-    
-    # transformixImageFilter = sitk.TransformixImageFilter()        #gets DFM of transform                                    #creates filter for transform
-    # transformixImageFilter.SetMovingImage(alpha3D)                                                   #maintains that model image is moving
-    # transformixImageFilter.SetTransformParameterMap(elastixImageFilter.GetTransformParameterMap())   #gets paramter map used for FFD
-    # transformixImageFilter.ComputeDeformationFieldOn()                                               #allows DFM to be computed during transform
-    # transformixImageFilter.LogToConsoleOn()                                                          #logs processing in terminal
-    # transformixImageFilter.Execute()                                                                 #performs transform
-    # DFM = transformixImageFilter.GetDeformationField()    
+  

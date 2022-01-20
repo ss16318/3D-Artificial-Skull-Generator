@@ -1,13 +1,46 @@
 ## MODELLING
 
-from defMatrix import createMatrix
 import os
+import numpy as np
+
+from defMatrix import createMatrix
+from newTP import newTP
+from reconstruct import reconstruct
+from display import *
+from check import *
+
 
 # 1. Create deformation matrix 
-files = os.listdir('/home/sebastian/.config/spyder-py3/Parameters')  #lists files in directory
-num = len(files) #counts files in list
 
-defMatrix = createMatrix(num)
+files = os.listdir('/home/sebastian/.config/spyder-py3/Parameters')  #lists files in directory
+num = len(files)                                                     #counts files in list
+
+defMatrix = createMatrix(num)   #outputs matrix of deformations
+
+
+# 2. Perform PCA on matrix
+
+dm = defMatrix.T                                #transposes matrix
+average = np.mean(dm,axis=1)                    #finds average of each column
+X = dm - np.tile(average,(dm.shape[1],1)).T     #subtracts average to get a zero mean
+
+#performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
+U , S , VT = np.linalg.svd(X,full_matrices=0)
+
+
+# 3. Create transform parameter file
+
+newTP(average)  #function creates transform paramter file with new control pt deformations
+
+
+# 4. Artificial skull reconstruction 
+
+artificialSkull = reconstruct()   #deforms model image using DFM reconstruction from new pm
+
+display(out,"Success!")
+compare(out,alpha3D,"Check")
+
+
 
 
 

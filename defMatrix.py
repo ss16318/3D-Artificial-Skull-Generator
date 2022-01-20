@@ -38,7 +38,6 @@ def createMatrix(numIms):
         
         if x ==0:
             defMatrix = np.zeros((numIms,len(row)))    #in the first loop the matrix must be instantiated
-            print("test")
             
         defMatrix[x,:] = row                           #sticks each 1D array of data into row of defMatrix
     
