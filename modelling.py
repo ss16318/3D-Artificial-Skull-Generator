@@ -8,6 +8,7 @@ from newTP import newTP
 from reconstruct import reconstruct
 from display import *
 from check import *
+from alpha3D import getAlpha3D
 
 
 # 1. Create deformation matrix 
@@ -27,18 +28,31 @@ X = dm - np.tile(average,(dm.shape[1],1)).T     #subtracts average to get a zero
 #performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
 U , S , VT = np.linalg.svd(X,full_matrices=0)
 
+totalVar = sum(S)   #sum of eigenvalues (which represent variance)
+
 
 # 3. Create transform parameter file
 
-newTP(average)  #function creates transform paramter file with new control pt deformations
+pcaSkull = average + U[:,0]
+
+explainedVar = int( (S[0] / totalVar)*100 )
+
+newTP(pcaSkull)  #function creates transform paramter file with new control pt deformations
 
 
 # 4. Artificial skull reconstruction 
 
 artificialSkull = reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-display(out,"Success!")
-compare(out,alpha3D,"Check")
+newTP(average)
+avg = reconstruct()
+
+display(artificialSkull,"Reconstruction " + str(explainedVar) + "%  "  )
+
+alpha3D = getAlpha3D()
+
+compare(artificialSkull,alpha3D, "Compare")
+compare(artificialSkull,avg, "Compare 2")
 
 
 

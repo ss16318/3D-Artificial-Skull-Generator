@@ -7,7 +7,7 @@ def createMatrix(numIms):
     
     for x in range(numIms):                   #loops through each parameter file
         
-        file = "/home/sebastian/.config/spyder-py3/Parameters/tp" + str(x) + ".txt"         #finds path to each parameter file
+        file = "/home/sebastian/.config/spyder-py3/Parameters/tp" + str(x) + ".txt"  #finds path to each parameter file
     
         #Extract data from parameter map
         with open (file , 'rt') as pm:                  #opens parameter file for reading
@@ -27,7 +27,7 @@ def createMatrix(numIms):
                     spacing = ln.split("GridSpacing",1)[1]               #gets line with spacing data
                     spacing = spacing.split(")",1)[0]
                     spacing = np.array(spacing.split(), dtype=np.float).astype(int)#saved as int to prevent error
-                    spacing = spacing*2                                  #why?
+                    #spacing = spacing*2                                  #why?
                     
                 if "(TransformParameters" in ln:                         #gets line with control pt def data
                     df = ln.split("(TransformParameters",1)[1]

@@ -6,9 +6,7 @@ def newTP(X):
     
     #converts array to string
     X.T                                          #transpose col to row
-    ls = X.tolist()                              #converts array to list
-    del ls[0:9]                                  #deletes first 8 elements
-    strOfval = ' '.join(str(e) for e in ls)      #converts list to string     
+    ls = X.tolist()                              #converts array to list     
     
     #paths to files (original acts as a template for target)
     original = r'/home/sebastian/.config/spyder-py3/Parameters/tp0.txt'
@@ -25,10 +23,30 @@ def newTP(X):
     
     for ln in lines:                 #loops through each line
         
-        #when line of control pt deformations is found change data to eigenvector values
-        if "(TransformParameters" in ln:
-            new_ln = '(TransformParameters ' + strOfval + ')\n'
-            new_file.write(new_ln)
+    
+        # if "GridOrigin" in ln:                                  #gets line with origin data
+        #     origin = ls[0:3]                                    #takes first 3 elements
+        #     orgVal = ' '.join(str(e) for e in origin)           #converts list to string
+        #     new_ln1 = '(GridOrigin ' + orgVal + ')\n'
+        #     new_file.write(new_ln1)
+            
+        # if "GridSize" in ln:                                    #gets line with size data
+        #     size = ls[3:6]                                    
+        #     szVal = ' '.join(str(e) for e in size)           
+        #     new_ln2 = '(GridSize ' + szVal + ')\n'
+        #     new_file.write(new_ln2)
+
+        # if "GridSpacing" in ln:                                 #gets line with spacing data
+        #     spacing = ls[6:9]                                    
+        #     spVal = ' '.join(str(e) for e in spacing)           
+        #     new_ln3 = '(GridSpacing ' + spVal + ')\n'
+        #     new_file.write(new_ln3)
+
+        if "(TransformParameters" in ln:                        #gets line with control pt def data
+            control = ls[9:]                                         
+            conVal = ' '.join(str(e) for e in control)      
+            new_ln4 = '(TransformParameters ' + conVal + ')\n'
+            new_file.write(new_ln4)
             
         else:
             new_file.write(ln)      #otherwise keep line unchanged

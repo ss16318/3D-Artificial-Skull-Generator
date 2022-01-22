@@ -1,6 +1,4 @@
-import os
-import os.path                          # allows script to read paths
-import gc                               # allows computer to handle memory (gc = garbage collector)
+
 import numpy as np
 import SimpleITK as sitk
 
@@ -11,8 +9,6 @@ from globalReg import *
 from localReg import ffd
 from alpha3D import getAlpha3D
 from check import *
-from declutter import declutter
-from reconstruction import reconstruct
 
 
 # 1. Builds paths to images of interest
@@ -24,7 +20,7 @@ file_list = []              #creates a list of paths to heads
 #current heads of interest
 file_list.append( core_path + 'CQ500-CT-436/CQ500CT436_CQ500CT436/Unknown_Study/CT_PLAIN_THIN' )
 file_list.append( core_path + 'CQ500-CT-309/CQ500CT309_CQ500CT309/Unknown_Study/CT_PLAIN_THIN' )
-#file_list.append( core_path + 'CQ500-CT-135/CQ500CT135_CQ500CT135/Unknown_Study/CT_PLAIN_THIN' )
+file_list.append( core_path + 'CQ500-CT-135/CQ500CT135_CQ500CT135/Unknown_Study/CT_PLAIN_THIN' )
 file_list.append( core_path + 'CQ500-CT-268/CQ500CT268_CQ500CT268/Unknown_Study/CT_Thin_Plain' )
 #file_list.append( core_path + 'CQ500-CT-38/CQ500CT38_CQ500CT38/Unknown_Study/CT_PLAIN_THIN' )
 #file_list.append( core_path + 'CQ500-CT-436/CQ500CT436_CQ500CT436/Unknown_Study/CT_Plain' )
@@ -61,9 +57,10 @@ for n in range (len(vectorOfImages)):
     im = vectorOfImages[n]
     resampled_im = resample(im, dimension, target_spacing)  #calls resample function
     vectorOfResamp.push_back(resampled_im)
+    display(vectorOfResamp[n],str(n))
     
     
-# 5. Global registration
+# 4. Global registration
 
 alpha3D = getAlpha3D()                              #gets MIDA model
 
@@ -76,17 +73,15 @@ for n in range (len(vectorOfImages)):
     vectorOfRigidReg.push_back(rigid_reg_im)
 
 
-# 6. Local Registration
+# 5. Local Registration
 
 vectorOfFFD = sitk.VectorOfImage()             #container for FFD images
-#vectorOfDFM = sitk.VectorOfImage()             #container for DFMs
 
 #for n in range (1):
 for n in range (len(vectorOfImages)):
     im = vectorOfRigidReg[n]
     results = ffd(im, alpha3D, n)           #calls elastic registration function
     vectorOfFFD.push_back(results[0])
-    #vectorOfDFM.push_back(results[1])
 
 
 
@@ -96,11 +91,9 @@ for n in range (len(vectorOfImages)):
 #display4D(vectorOfDFM[0]," (a) Toward Rigidly-Registered Image")
 #compare(vectorOfFFD[0],vectorOfRigidReg[0]," (b) FFD of Model vs Rigidly-Registered")
 #compare(vectorOfRigidReg[0],alpha3D,"(a) Rigidly-Registered vs Model")
-
 #rec = reconstruct(alpha3D, vectorOfDFM[0])
 #compare(rec,vectorOfFFD[0],"FFD of Model vs Model with DFM approximation")
   
-
 # 4. Declutter Image (not ready to use)
 
 # vectorOfDeclut = sitk.VectorOfImage()              
@@ -112,21 +105,6 @@ for n in range (len(vectorOfImages)):
 #     declutIm = declutter(im)
 #     vectorOfDeclut.push_back(declutIm) 
 
-     
-
-# # 7. Matrix of DFMs
-
-# #for n in range (1):
-# for n in range (len(vectorOfDFM)):
-#      dfm = sitk.GetArrayFromImage(vectorOfDFM[n])    #converts DFM to 4D array
-#      print('3')
-#      row = np.ravel(dfm)                             #converts 4D array to 1D column
-#      print('4')
-#      defMatrix[n,:] = row
-#      print('5')
-
-# np.save("sample.npy", defMatrix)
-# test = np.load("sample.npy")
 
 
 
