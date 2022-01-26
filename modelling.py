@@ -2,6 +2,7 @@
 
 import os
 import numpy as np
+import matplotlib as plt
 
 from defMatrix import createMatrix
 from newTP import newTP
@@ -12,12 +13,7 @@ from alpha3D import getAlpha3D
 
 
 # 1. Create deformation matrix 
-
-files = os.listdir('/home/sebastian/.config/spyder-py3/Parameters')  #lists files in directory
-num = len(files)                                                     #counts files in list
-
-defMatrix = createMatrix(num)   #outputs matrix of deformations
-
+defMatrix = createMatrix()   #outputs matrix of deformations
 
 # 2. Perform PCA on matrix
 
@@ -30,14 +26,25 @@ U , S , VT = np.linalg.svd(X,full_matrices=0)
 
 totalVar = sum(S)   #sum of eigenvalues (which represent variance)
 
+explainedVariance = np.cumsum(S)/totalVar
+numModes = np.arange(len(explainedVariance))
+
+plt.bar(numModes+1, explainedVariance*100)
+ax = plt.gca()
+ax.set_ylabel("Explained Variance (%)")                 
+ax.set_xlabel("Number of Modes")
+plt.xlim([0,len(explainedVariance)+1])
+plt.title("Explained Variance vs Number of Modes")
+plt.show()
+
 
 # 3. Create transform parameter file
 
-pcaSkull = average + U[:,0]
+newDeformations = average + U[:,0]
 
 explainedVar = int( (S[0] / totalVar)*100 )
 
-newTP(pcaSkull)  #function creates transform paramter file with new control pt deformations
+newTP(newDeformations)  #function creates transform paramter file with new control pt deformations
 
 
 # 4. Artificial skull reconstruction 
@@ -53,6 +60,9 @@ alpha3D = getAlpha3D()
 
 compare(artificialSkull,alpha3D, "Compare")
 compare(artificialSkull,avg, "Compare 2")
+
+
+    
 
 
 

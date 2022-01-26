@@ -3,7 +3,10 @@
 import os
 import numpy as np
 
-def createMatrix(numIms):
+def createMatrix():
+    
+    files = os.listdir('/home/sebastian/.config/spyder-py3/Parameters')  #lists files in directory
+    numIms = len(files)                                                  #counts files in list
     
     for x in range(numIms):                   #loops through each parameter file
         

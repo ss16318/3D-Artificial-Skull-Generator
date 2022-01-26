@@ -354,3 +354,43 @@ total = sum(S)
 runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
 compare(artificialSkull,avg, "Compare 2")
 runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Sun Jan 23 13:21:26 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Sun Jan 23 19:16:20 2022)---
+runfile('/home/sebastian/.config/spyder-py3/chooseSkulls.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/chooseSkulls.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/chooseSkulls.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Mon Jan 24 19:52:07 2022)---
+runfile('/home/sebastian/.config/spyder-py3/chooseSkulls.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Mon Jan 24 20:27:11 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Mon Jan 24 20:45:51 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan 25 09:48:27 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan 25 10:04:06 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan 25 10:24:26 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Jan 25 16:51:38 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
