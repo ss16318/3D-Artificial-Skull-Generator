@@ -40,9 +40,16 @@ plt.show()
 
 # 3. Create transform parameter file
 
-newDeformations = average + U[:,0]
+numberModes = len(explainedVariance[explainedVariance<0.9])
 
-explainedVar = int( (S[0] / totalVar)*100 )
+b = np.full(numberModes,1000)
+
+for x in range(numberModes):
+    
+    while abs(b[x]) > 3*np.sqrt(S[x]):
+        b[x] = np.random.normal( 0 , S[x] )
+        
+newDeformations = np.matmul(U[:,0:numberModes],b)
 
 newTP(newDeformations)  #function creates transform paramter file with new control pt deformations
 
@@ -54,7 +61,7 @@ artificialSkull = reconstruct()   #deforms model image using DFM reconstruction 
 newTP(average)
 avg = reconstruct()
 
-display(artificialSkull,"Reconstruction " + str(explainedVar) + "%  "  )
+display(artificialSkull,"Reconstruction " + "Hello"  )
 
 alpha3D = getAlpha3D()
 
