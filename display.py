@@ -91,3 +91,18 @@ def display4D( im , Title ):
     
     return plt.show()
 
+## DISPLAYS Cumulative Exaplained Variance
+
+def displayCEV(CEV):
+
+    modeNum = np.arange(len(CEV))                    # Eigenmode number (just a list) 
+    
+    plt.bar(modeNum+1, CEV)                          # plot bar of cumulative explained variance
+    ax = plt.gca()
+    ax.set_ylabel("Explained Variance (%)")                 
+    ax.set_xlabel("Number of Modes")
+    plt.xlim([0,len(CEV)+1])
+    plt.title("Explained Variance vs Number of Modes")
+    plt.show()
+
+    return

@@ -35,7 +35,7 @@ def compare(im1, im2 , Title):
     
     plt.figure()                                              #creates figure for plot
     plt.imshow( (im_array)[int(im_array.shape[0]/2), :, :])   #takes halfway slice of transverse view
-    plt.clim(-50, 50) 
+    plt.clim(-100, 100) 
     plt.set_cmap('bwr')                                       #colormap used
     cbar  = plt.colorbar()                                    #displays colorbar
     ax = plt.gca()                                            #gets plot axis
@@ -48,7 +48,7 @@ def compare(im1, im2 , Title):
     #same setup for frontal view
     plt.figure()
     plt.imshow((im_array)[:, int(im_array.shape[1]/2) ,:])    
-    plt.clim(-50, 50) 
+    plt.clim(-100, 100) 
     plt.set_cmap('bwr')
     cbar  = plt.colorbar() 
     ax = plt.gca()
@@ -61,7 +61,7 @@ def compare(im1, im2 , Title):
     #same setup for saggital view
     plt.figure()
     plt.imshow((im_array)[:, :, int(im_array.shape[2]/2)])
-    plt.clim(-50, 50) 
+    plt.clim(-100, 100) 
     plt.set_cmap('bwr')
     cbar  = plt.colorbar() 
     ax = plt.gca()

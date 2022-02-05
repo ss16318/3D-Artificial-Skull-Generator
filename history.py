@@ -396,3 +396,37 @@ runfile('/home/sebastian/.config/spyder-py3/run.py', wdir='/home/sebastian/.conf
 debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
 compare(artificialSkull,avg, "Compare 2")
+
+## ---(Tue Feb  1 09:55:06 2022)---
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+np.linalg.norm(U[0])
+np.linalg.norm(U[1])
+x = U[0]
+y = U[0,:]
+y = U[:,0]
+np.linalg.norm(y)
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Feb  1 11:43:12 2022)---
+runfile('/home/sebastian/.config/spyder-py3/quiver.py', wdir='/home/sebastian/.config/spyder-py3')
+compare(FFDIm,alpha3D)
+from check import compare
+compare(FFDIm,alpha3D)
+compare(FFDIm,alpha3D, "Check ")
+compare(rigid_reg_im,alpha3D, "Check ")
+runfile('/home/sebastian/.config/spyder-py3/testSpace.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/quiver.py', wdir='/home/sebastian/.config/spyder-py3')
+display(alpha3D,'Model')
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Feb  4 15:12:26 2022)---
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/quiver.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Feb  4 17:52:24 2022)---
+runfile('/home/sebastian/.config/spyder-py3/quiver.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
