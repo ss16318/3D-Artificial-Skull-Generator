@@ -26,8 +26,6 @@ resampled_im = resample(im, dimension, target_spacing)  #calls resample function
 
 rigid_reg_im = rigidReg(resampled_im, alpha3D) 
 
-
-
 parameterMap = sitk.GetDefaultParameterMap("bspline")                                            #FFD registration
 
 parameterMap['Registration'] = ("MultiMetricMultiResolutionRegistration",)
@@ -43,7 +41,7 @@ parameterMap.asdict()                                                           
 
 elastixImageFilter = sitk.ElastixImageFilter()      #creates a filter for registration                                                
 elastixImageFilter.SetParameterMap(parameterMap)    #defines what filter should do
-elastixImageFilter.SetFixedImage(resampled_im)                #input image is fixed
+elastixImageFilter.SetFixedImage(rigid_reg_im)                #input image is fixed
 elastixImageFilter.SetMovingImage(alpha3D)          #model image is moving
 elastixImageFilter.LogToFileOn()                    #logs processing in terminal
 elastixImageFilter.Execute()                        #performs registration
@@ -81,55 +79,44 @@ with open (file , 'rt') as pm:                  #opens parameter file for readin
             deformations = np.array(df.split(), dtype=np.float)
                 
 
-
-
 deformations = deformations.reshape(3, int(deformations.shape[0]/3))
 U = deformations[0,:].reshape(n_el[0], n_el[1], n_el[2])
 V = deformations[1,:].reshape(n_el[0], n_el[1], n_el[2])
 
-#### Create deformation grid
-X, Y, Z = np.meshgrid(np.linspace(0, (n_el[0]*spacing[0]), int(n_el[0])),
-                      np.linspace(0, (n_el[1] * spacing[1]) , int(n_el[1])),
-                      np.linspace(0, (n_el[2]*spacing[2]), int(n_el[2])))
-
-#### Create image grid
-
-alpha3D_image_array = sitk.GetArrayFromImage(alpha3D)
-X_im, Y_im, Z_im = np.meshgrid(np.linspace(0, alpha3D_image_array.shape[0]-1, alpha3D_image_array.shape[0]),
-                               np.linspace(0, alpha3D_image_array.shape[1]-1, alpha3D_image_array.shape[1]),
-                               np.linspace(0, alpha3D_image_array.shape[2]-1, alpha3D_image_array.shape[2]))
 
 #### Plot image with arrow overlay
-im_array = sitk.GetArrayFromImage(FFDIm)
+im_array = sitk.GetArrayFromImage(alpha3D)
+size = np.shape(im_array)
+
 slice_id = int(im_array.shape[2]/(2*spacing[0]))
 plt.figure()
 plt.imshow( (im_array)[int(im_array.shape[0]/2), :, :])
 ax = plt.gca() 
 ax.invert_yaxis()
-X, Y =np.meshgrid(np.linspace(start[1], (n_el[1]*spacing[1])-start[1], int(n_el[1])),
-                  np.linspace(start[2], (n_el[2]*spacing[2])-start[2], int(n_el[2])))
+X, Y =np.meshgrid(np.linspace(0, size[2], int(n_el[2])),
+                  np.linspace(0, size[1], int(n_el[1])))
 X = X.reshape(X.size)
 Y = Y.reshape(Y.size)
-plt.quiver(X, Y, U[slice_id,:,:], V[slice_id,:,:])
+plt.quiver(X, Y, U[slice_id,:,:], V[slice_id,:,:] , color='r')
 
 plt.figure()
 plt.imshow((im_array)[:, int(im_array.shape[1]/2) ,:]) 
 ax = plt.gca() 
 ax.invert_yaxis()
-X, Y =np.meshgrid(np.linspace(start[0], (n_el[0]*spacing[0])-start[0], int(n_el[0])),
-                  np.linspace(start[2], (n_el[2]*spacing[2])-start[2], int(n_el[2])))
+X, Y =np.meshgrid(np.linspace(0, size[2], int(n_el[2])),
+                  np.linspace(0, size[0], int(n_el[0])))
 X = X.reshape(X.size)
 Y = Y.reshape(Y.size)
-plt.quiver(X, Y, U[:,slice_id,:], V[:,slice_id,:])
+plt.quiver(X, Y, U[:,slice_id,:], V[:,slice_id,:], color='r')
 
 plt.figure()
 plt.imshow((im_array)[:, :, int(im_array.shape[2]/2)])
 ax = plt.gca() 
 ax.invert_yaxis()
-X, Y =np.meshgrid(np.linspace(start[0], (n_el[0]*spacing[0])-start[0], int(n_el[0])),
-                  np.linspace(start[1], (n_el[1]*spacing[1])-start[1], int(n_el[1])))
+X, Y =np.meshgrid(np.linspace(0, size[1], int(n_el[1])),
+                  np.linspace(0, size[0], int(n_el[0])))
 X = X.reshape(X.size)
 Y = Y.reshape(Y.size)
-plt.quiver(X, Y, U[:,slice_id,:], V[:,slice_id,:])
+plt.quiver(X, Y, U[:,:,slice_id], V[:,:,slice_id] , color='r')
 
 

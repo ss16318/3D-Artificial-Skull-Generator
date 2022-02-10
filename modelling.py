@@ -38,15 +38,18 @@ displayCEV(CumulativeExplainedVariance)
 # finds number of principal components that account for up to 90% of variance
 numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<90])   
 
-# create a random parameter vector w/ elements set at 1000
-b = np.full(numPC,1000)     
-    
-for x in range(numPC):  #loops through each element of random parameter vector 
+numIms = 5 #number of artificial images to be created
 
-    # imposes that element lies within 3 std dev of eigenvector variation
-    while abs(b[x]) > 3*np.sqrt(S[x]):    
-        # element set to value from Gaussian distribution w/ eigenvalue variance          
-        b[x] = np.random.normal( 0 , S[x] )        
+# create a random parameter vector w/ elements set at 1000
+b = np.full((numPC,numIms),1000)     
+
+for i in range(numIms):
+    for x in range(numPC):  #loops through each element of random parameter vector 
+    
+        # imposes that element lies within 3 std dev of eigenvector variation
+        while abs(b[x,i]) > 3*np.sqrt(S[x]):    
+            # element set to value from Gaussian distribution w/ eigenvalue variance          
+            b[x,i] = np.random.normal( 0 , S[x] )        
         
 #multiplies random parameter vector with principal eigenvectors
 newDeformations = np.matmul(U[:,0:numPC],b)  
@@ -54,14 +57,18 @@ newDeformations = np.matmul(U[:,0:numPC],b)
 
 # 3. Create transform parameter file
 
-newTP(newDeformations)  #function creates transform paramter file with new control pt deformations
+for x in range(numIms):
+    newTP(newDeformations[:,x])  #function creates transform paramter file with new control pt deformations
 
-   
-# 4. Artificial skull reconstruction 
+    # 4. Artificial skull reconstruction 
     
-artificialSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
+    artificialSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-display(artificialSkull, "Artificial Skull ")
+    display(artificialSkull, "Artificial Skull ")
+    
+newTP(average)
+averageSkull = reconstruct()
+display(averageSkull, "Average Skull ")
 
 
 

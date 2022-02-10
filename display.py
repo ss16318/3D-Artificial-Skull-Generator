@@ -31,7 +31,7 @@ def display( im , Title ):
     ax.set_ylabel("Pixels (0.5mm spacing)")
     ax.set_xlabel("Pixels (0.5mm spacing)")
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)
-    plt.title(Title + "(b) Frontal view")
+    plt.title(Title + " Frontal view")
     
     #same setup for saggital view
     plt.figure()
@@ -44,7 +44,7 @@ def display( im , Title ):
     ax.set_ylabel("Pixels (0.5mm spacing)")
     ax.set_xlabel("Pixels (0.5mm spacing)")
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)
-    plt.title(Title + "(c) Sagittal View")
+    plt.title(Title + " (Sagittal View)")
     
     return plt.show()                                        #displays figures                             
 
