@@ -82,7 +82,7 @@ with open (file , 'rt') as pm:                  #opens parameter file for readin
 deformations = deformations.reshape(3, int(deformations.shape[0]/3))
 U = deformations[0,:].reshape(n_el[0], n_el[1], n_el[2])
 V = deformations[1,:].reshape(n_el[0], n_el[1], n_el[2])
-
+                                                                                                                                                                                                                                            
 
 #### Plot image with arrow overlay
 im_array = sitk.GetArrayFromImage(alpha3D)

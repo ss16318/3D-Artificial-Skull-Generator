@@ -459,3 +459,52 @@ U[:,slice_id,:]
 runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
 debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Feb 10 11:07:48 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/quiver.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Feb 11 18:59:51 2022)---
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+np.sahpe(defMatrix)
+np.shape(defMatrix)
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+compare(estimatedSkull,realSkull)
+from check import *
+compare(estimatedSkull,realSkull)
+compare(estimatedSkull,realSkull,'Compare')
+np.linalg.inv(U)
+X = np.matmul(U,np.transpose(U))
+np.linalg.inv(X)
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Feb 17 10:28:51 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+compare(estimatedSkull,realSkull, 'Compare ' )
+from check import*
+compare(estimatedSkull,realSkull, 'Compare ' )
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+from check import*
+compare(estimatedSkull,realSkull, 'Compare ' )
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+compare(estimatedSkull,realSkull, 'Compare ' )
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+compare(estimatedSkull,realSkull, 'Compare ' )
+runfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/SkullControlPoints.py', wdir='/home/sebastian/.config/spyder-py3')
+alphaArray.shape
+parameterMap.GetTransformDomainMeshSize()
+elastixImageFilter.GetTransformDomainMeshSize()
+FFD.GetTransformDomainMeshSize()
+FFDIm.GetTransformDomainMeshSize()
+x = TransformParameters.0.txt
+parameterMap.values
+parameterMap.items
+elastix.GetParameterMap
+sitk.GetPixelIDValueAsElastixParameter
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
