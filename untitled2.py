@@ -21,13 +21,13 @@ defMatrix = np.delete(defMatrix, 41, 0)
 defMatrix = np.delete(defMatrix, 48, 0)
 
 error = np.full((len(defMatrix)),-1)  
-bestEstimation = np.zeros(np.shape(defMatrix)) 
 
-for t in range(len(defMatrix)): 
+test = defMatrix[1,:]
 
-    test = defMatrix[t,:]
-    
-    dm = np.delete(defMatrix, t, 0)
+dm = np.delete(defMatrix, 1, 0)
+
+for t in range(len(dm)): 
+
 
     # 2. Perform SVD on matrix
     dm = dm.T                                       #transposes matrix
@@ -36,6 +36,7 @@ for t in range(len(defMatrix)):
     
     #performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
     U , S , VT = np.linalg.svd(X,full_matrices=0)
+    
     
     
     # 3. Perform PCA Modelling
@@ -47,9 +48,9 @@ for t in range(len(defMatrix)):
     
     
     # finds number of principal components that account for up to 90% of variance
-    numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<90])   
+    numPC = t+1   
     
-    numIter = 1000 #number of artificial images to be created
+    numIter = 100 #number of artificial images to be created
     
     # create a random parameter vector w/ elements set at 1000
     b = np.full((numPC),1000)     
@@ -58,7 +59,7 @@ for t in range(len(defMatrix)):
         for x in range(numPC):  #loops through each element of random parameter vector 
         
             # imposes that element lies within 3 std dev of eigenvector variation
-            while abs(b[x]) > 4*np.sqrt(S[x]):    
+            while abs(b[x]) > 3*np.sqrt(S[x]):    
                 # element set to value from Gaussian distribution w/ eigenvalue variance          
                 b[x] = np.random.normal( 0 , S[x] )        
             
@@ -72,40 +73,9 @@ for t in range(len(defMatrix)):
     
         if error[t] < 0 or error[t] > MSE:
             error[t] = MSE
-            bestEstimation[t,:] = newDef
+          
+            
+        print(i)
+    print(t)
         
 averageError = np.mean(error)
-varianceError = np.var(error)
-
-for x in range(1):
-    
-    newTP(bestEstimation[x,:])  #function creates transform paramter file with new control pt deformations
-
-    # 4. Artificial skull reconstruction 
-    
-    estimatedSkull = reconstruct()   #deforms model image using DFM reconstruction from new pm
-
-    display( estimatedSkull, "Estimated Skull ")
-    
-    newTP( defMatrix[x,:] )
-
-    realSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
-
-    display(realSkull, "Real Skull ")
-    
-    compare(estimatedSkull,realSkull, "Comparison 1")
-    
-    alignedSkull = rigidReg(estimatedSkull, realSkull)
-    
-    compare(alignedSkull,realSkull, "Comparison 2")
-    
-    
-    
-
-        
-
-    
-    
-    
-
-

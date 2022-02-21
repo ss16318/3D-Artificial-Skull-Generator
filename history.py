@@ -508,3 +508,48 @@ elastix.GetParameterMap
 sitk.GetPixelIDValueAsElastixParameter
 runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
 debugfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Feb 18 11:17:25 2022)---
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+from check import compare
+compare(estimatedSkull,realSkull, "Comparison 1")
+alignedSkull = rigidReg(estimatedSkull, realSkull)
+compare(alignedSkull,realSkull, "Comparison 2")
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+from globalReg import rigidReg
+from check import compare
+compare(estimatedSkull,realSkull, "Comparison 1")
+alignedSkull = rigidReg(estimatedSkull, realSkull)
+compare(alignedSkull,realSkull, "Comparison 2")
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Feb 18 12:11:32 2022)---
+runfile('/home/sebastian/.config/spyder-py3/warping.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/warping.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/display.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/warping.py', wdir='/home/sebastian/.config/spyder-py3')
+displayGrid(warped, FFDIm, "Warped grid")
+runfile('/home/sebastian/.config/spyder-py3/display.py', wdir='/home/sebastian/.config/spyder-py3')
+from display import *
+displayGrid(warped, FFDIm, "Warped grid")
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/warp.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Sun Feb 20 19:15:37 2022)---
+runfile('/home/sebastian/.config/spyder-py3/gridChange.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runcell(0, '/home/sebastian/.config/spyder-py3/untitled0.py')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/warp.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')

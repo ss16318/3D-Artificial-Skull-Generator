@@ -52,13 +52,13 @@ for i in range(numIms):
             b[x,i] = np.random.normal( 0 , S[x] )        
         
 #multiplies random parameter vector with principal eigenvectors
-newDeformations = np.matmul(U[:,0:numPC],b)  
+residualDef = np.matmul(U[:,0:numPC],b)  
 
 
 # 3. Create transform parameter file
 
 for x in range(numIms):
-    newTP(newDeformations[:,x])  #function creates transform paramter file with new control pt deformations
+    newTP(average + residualDef[:,x])  #function creates transform paramter file with new control pt deformations
 
     # 4. Artificial skull reconstruction 
     

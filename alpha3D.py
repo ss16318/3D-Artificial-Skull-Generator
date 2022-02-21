@@ -23,28 +23,7 @@ def getAlpha3D():
     alpha3D_image.SetSpacing(target_spacing)
     
     return alpha3D_image 
-
-
-
-
-
-#RABBIT HOLE OF SHAPE DIFFERENCES BETWEEN ALPHA 3D AND INPUT HEAD (not used)
-
-# PASTE IDEA
-    # base_im = sitk.GetImageFromArray(np.ones((600,600,600)))      # Create the output image space
-    # base_im.SetSpacing(target_spacing)                            # set spacing of points
-    # base_im.SetDirection(alpha3D_image.GetDirection())            # set direction of image and resamp to match
-
-    # alpha3D_im = sitk.PasteImageFilter(base_im,alpha3D_image)
-    
-# RESAMPLE IDEA
-    #from resample import resample
-    # return resample(alpha3D_image,3,target_spacing)
-    
-# PAD ARRAY IDEA
-        #dims = np.shape(alpha3D)
-        #size = 600
-        #alpha3D = np.lib.pad(alpha3D, ((0,size-dims[0]),(0,size-dims[1]),(0,size-dims[2])) , 'constant', constant_values=(-1000))                        
+                      
 
         
 

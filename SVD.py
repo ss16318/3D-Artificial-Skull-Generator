@@ -9,6 +9,8 @@ from sklearn.metrics import mean_squared_error
 from newTP import newTP
 from reconstruct import reconstruct
 from display import *
+from globalReg import rigidReg
+from check import compare
 
 
 
@@ -80,3 +82,9 @@ for x in range(1):
     realSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
 
     display(realSkull, "Real Skull ")
+    
+    compare(estimatedSkull,realSkull, "Comparison 1")
+    
+    alignedSkull = rigidReg(estimatedSkull, realSkull)
+    
+    compare(alignedSkull,realSkull, "Comparison 2")
