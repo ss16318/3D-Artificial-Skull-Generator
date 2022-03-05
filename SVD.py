@@ -32,6 +32,7 @@ for t in range(len(defMatrix)):
     dm = dm.T                                       #transposes matrix
     average = np.mean(dm,axis=1)                    #finds average of each column
     X = dm - np.tile(average,(dm.shape[1],1)).T     #subtracts average to get a zero mean
+
     
     #performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
     U , S , VT = np.linalg.svd(X,full_matrices=0)
@@ -46,7 +47,7 @@ for t in range(len(defMatrix)):
     
     
     # finds number of principal components that account for up to 90% of variance
-    numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<100])   
+    numPC = len(CumulativeExplainedVariance)
     
     PC = U[:,0:numPC]
     transPC = np.transpose(PC)

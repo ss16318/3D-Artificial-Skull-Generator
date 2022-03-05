@@ -43,8 +43,7 @@ def newTP(X):
         #     new_file.write(new_ln3)
 
         if "(TransformParameters" in ln:                        #gets line with control pt def data
-            control = ls[9:]                                         
-            conVal = ' '.join(str(e) for e in control)      
+            conVal = ' '.join(str(e) for e in ls)      
             new_ln4 = '(TransformParameters ' + conVal + ')\n'
             new_file.write(new_ln4)
             

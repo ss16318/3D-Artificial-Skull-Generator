@@ -37,6 +37,8 @@ for t in range(len(defMatrix)):
     #performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
     U , S , VT = np.linalg.svd(X,full_matrices=0)
     
+    if t == 0 :
+        avg = average
     
     # 3. Perform PCA Modelling
     
@@ -47,9 +49,9 @@ for t in range(len(defMatrix)):
     
     
     # finds number of principal components that account for up to 90% of variance
-    numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<90])   
+    numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<60])   
     
-    numIter = 1000 #number of artificial images to be created
+    numIter = 100 #number of artificial images to be created
     
     # create a random parameter vector w/ elements set at 1000
     b = np.full((numPC),1000)     
@@ -58,9 +60,9 @@ for t in range(len(defMatrix)):
         for x in range(numPC):  #loops through each element of random parameter vector 
         
             # imposes that element lies within 3 std dev of eigenvector variation
-            while abs(b[x]) > 4*np.sqrt(S[x]):    
+            while abs(b[x]) > 3*np.sqrt(S[x]):    
                 # element set to value from Gaussian distribution w/ eigenvalue variance          
-                b[x] = np.random.normal( 0 , S[x] )        
+                b[x] = np.random.uniform(-2*np.sqrt(S[x]) , 2*np.sqrt(S[x]) )#np.random.normal( 0 , S[x] )        
             
         #multiplies random parameter vector with principal eigenvectors
         residualDef = np.matmul(U[:,0:numPC],b)  
@@ -87,6 +89,11 @@ for x in range(1):
 
     display( estimatedSkull, "Estimated Skull ")
     
+    newTP(avg)
+    average = reconstruct()
+    compare(estimatedSkull,average,'Compare')
+    
+    
     newTP( defMatrix[x,:] )
 
     realSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
@@ -98,6 +105,8 @@ for x in range(1):
     alignedSkull = rigidReg(estimatedSkull, realSkull)
     
     compare(alignedSkull,realSkull, "Comparison 2")
+    
+    
     
     
     

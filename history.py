@@ -553,3 +553,91 @@ runfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian
 debugfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
 debugfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Feb 22 11:18:04 2022)---
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+average = reconstruct()
+newTP(average)
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+compare(averageSkull,realSkull, 'Compare')
+compare(averageSkull,estimatedSkull,'Compare')
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+newTP( defMatrix[x,:] )
+
+realSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
+
+display(realSkull, "Real Skull ")
+
+compare(estimatedSkull,realSkull, "Comparison 1")
+
+alignedSkull = rigidReg(estimatedSkull, realSkull)
+
+compare(alignedSkull,realSkull, "Comparison 2")
+compare(averageSkull,realSkull,"Hi")
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled3.py', wdir='/home/sebastian/.config/spyder-py3')
+size(averageSkull,0)
+im = getAlpha3D()
+import SimpleITK as sitk
+import matplotlib.pyplot as plt
+import numpy as np
+
+from alpha3D import getAlpha3D
+from mpl_toolkits.mplot3d import Axes3D
+im = getAlpha3D()
+im_array = sitk.GetArrayFromImage(im)
+size = shape(im_array)
+size = im_array.shape
+size[0]
+runfile('/home/sebastian/.config/spyder-py3/untitled3.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Feb 23 17:56:10 2022)---
+runfile('/home/sebastian/.config/spyder-py3/3DPlotting.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Feb 23 18:03:00 2022)---
+runfile('/home/sebastian/.config/spyder-py3/3DPlotting.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Feb 24 11:21:47 2022)---
+runfile('/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D')
+runfile('/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D/02_script_inverse.py', wdir='/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D')
+runfile('/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D')
+runfile('/home/sebastian/.config/spyder-py3/stride/examples/__init__.py', wdir='/home/sebastian/.config/spyder-py3/stride/examples')
+runfile('/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/localReg.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Feb 24 15:02:49 2022)---
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+from saveToMat import SaveToMat
+SaveToMat(artificialSkull)
+SaveToMat(artificialSkull,'Test')
+runfile('/home/sebastian/.config/spyder-py3/SVD.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Mon Feb 28 13:05:03 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue Mar  1 12:28:07 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled2.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Mar  2 11:26:17 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Mar  3 20:22:44 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Mar  3 20:23:54 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/stride/examples/examples/breast2D')
+runfile('/home/sebastian/stride/stride/__init__.py', wdir='/home/sebastian/stride/stride')
+runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/stride/examples/examples/breast2D')
+runfile('/home/sebastian/stride/stride/__init__.py', wdir='/home/sebastian/stride/stride')
+runfile('/home/sebastian/stride/mosaic/core/base.py', wdir='/home/sebastian/stride/mosaic/core')
+runfile('/home/sebastian/stride/mosaic/__init__.py', wdir='/home/sebastian/stride/mosaic')

@@ -36,7 +36,7 @@ CumulativeExplainedVariance = 100*np.cumsum(S)/totalVar
 displayCEV(CumulativeExplainedVariance)
 
 # finds number of principal components that account for up to 90% of variance
-numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<90])   
+numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<100])   
 
 numIms = 5 #number of artificial images to be created
 

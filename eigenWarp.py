@@ -26,7 +26,7 @@ X = dm - np.tile(average,(dm.shape[1],1)).T     #subtracts average to get a zero
 #performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
 U , S , VT = np.linalg.svd(X,full_matrices=0)
 
-numPC = 3
+numPC = 5
 residualDef = 0
 
 # create a random parameter vector w/ elements set at 1000
@@ -52,4 +52,4 @@ for x in range(numPC):
     
     warpedGrid = warpGrid()
     
-    displayGrid(warpedGrid,artificialSkull,"Post-warping")
+    displayGrid(warpedGrid,artificialSkull,"Warping with eigenmode" + str(x) )
