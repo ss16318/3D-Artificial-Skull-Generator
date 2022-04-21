@@ -26,21 +26,24 @@ X = dm - np.tile(average,(dm.shape[1],1)).T     #subtracts average to get a zero
 #performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
 U , S , VT = np.linalg.svd(X,full_matrices=0)
 
-numPC = 5
-residualDef = 0
+numPC = 3
 
 # create a random parameter vector w/ elements set at 1000
 b = np.full((numPC,1),1000)
 
+newTP(average)
+
+averageSkull = reconstruct()
+
+warpedGrid = warpGrid(averageSkull,0)
+
 for x in range(numPC):
 
-    # imposes that element lies within 3 std dev of eigenvector variation
-    while abs(b[x]) > 3*np.sqrt(S[x]):
-        # element set to value from Gaussian distribution w/ eigenvalue variance          
-        b[x] = np.random.normal( 0 , S[x] )        
+         
+    b[x] = 3*np.sqrt(S[x])     
  
     #multiplies random parameter vector with principal eigenvectors
-    residualDef = residualDef + U[:,x] * b[x] 
+    residualDef = U[:,x] * b[x] 
     
     newDef = average + residualDef
     
@@ -48,8 +51,26 @@ for x in range(numPC):
     
     # 4. Artificial skull reconstruction 
     
-    artificialSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
+    artificialSkull1 = reconstruct()   #deforms model image using DFM reconstruction from new pm
     
-    warpedGrid = warpGrid()
+    warpedGrid = warpGrid(averageSkull,1)
     
-    displayGrid(warpedGrid,artificialSkull,"Warping with eigenmode" + str(x) )
+    displayGrid(warpedGrid,artificialSkull1," +ve Warping with eigenmode " + str(x+1) )
+    
+    
+    newDef = average - residualDef
+    
+    newTP(newDef)  #function creates transform paramter file with new control pt deformations
+    
+    # 4. Artificial skull reconstruction 
+    
+    artificialSkull2 = reconstruct()   #deforms model image using DFM reconstruction from new pm
+    
+    warpedGrid = warpGrid(averageSkull,1)
+    
+    displayGrid(warpedGrid,artificialSkull2," -ve Warping with eigenmode " + str(x+1) )
+    
+    compare(artificialSkull1,artificialSkull2,'Comparison')
+    
+    
+    

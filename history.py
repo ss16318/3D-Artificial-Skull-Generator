@@ -641,3 +641,83 @@ runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py'
 runfile('/home/sebastian/stride/stride/__init__.py', wdir='/home/sebastian/stride/stride')
 runfile('/home/sebastian/stride/mosaic/core/base.py', wdir='/home/sebastian/stride/mosaic/core')
 runfile('/home/sebastian/stride/mosaic/__init__.py', wdir='/home/sebastian/stride/mosaic')
+
+## ---(Sat Mar  5 19:06:56 2022)---
+runfile('/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/.config/spyder-py3/stride/examples/examples/breast2D')
+
+## ---(Wed Mar  9 10:32:39 2022)---
+runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/stride/examples/examples/breast2D')
+
+## ---(Thu Mar 10 11:08:04 2022)---
+runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/stride/examples/examples/breast2D')
+
+## ---(Thu Mar 10 11:10:32 2022)---
+runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/stride/examples/examples/breast2D')
+
+## ---(Thu Mar 10 11:12:04 2022)---
+runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/stride/examples/examples/breast2D')
+
+## ---(Thu Mar 10 11:12:49 2022)---
+runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/stride/examples/examples/breast2D')
+
+## ---(Thu Mar 10 11:18:18 2022)---
+runfile('/home/sebastian/stride/examples/examples/breast2D/01_script_forward.py', wdir='/home/sebastian/stride/examples/examples/breast2D')
+
+## ---(Wed Mar 16 18:48:25 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run2.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run2.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled3.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled3.py', wdir='/home/sebastian/.config/spyder-py3')
+alpha3D = getAlpha3D()
+rigid_reg_im = rigidReg(im, alpha3D)
+debugfile('/home/sebastian/.config/spyder-py3/untitled3.py', wdir='/home/sebastian/.config/spyder-py3')
+im1.GetOrigin
+debugfile('/home/sebastian/.config/spyder-py3/untitled3.py', wdir='/home/sebastian/.config/spyder-py3')
+im1 = sitk.ReadImage(path+files[14])
+im1.SetOrigin((0,0,0))
+display(im1,'Test')
+im1.GetSpacing
+im1.GetSpacing()
+alpha3D = getAlpha3D()
+alpha3D.getSpacing()
+alpha3D.GetSpacing()
+alpha3D.Origin()
+alpha3D.GetOrigin()
+alpha3D.GetDirection()
+im1.GetDirection()
+im1.SetDirection((1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0))
+display(im1,'Test')
+rigid_reg_im = rigidReg(im1, alpha3D)
+display(rigid_reg_im,'Test')
+debugfile('/home/sebastian/.config/spyder-py3/untitled3.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Fri Mar 18 22:43:33 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/defMatrix.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+cd /media/sebastian/Data1/Oscar/Oscar/qure_ai/nii_reorient/
+ls
+debugfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/LOOCV.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/declutter.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')

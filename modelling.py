@@ -38,22 +38,34 @@ displayCEV(CumulativeExplainedVariance)
 # finds number of principal components that account for up to 90% of variance
 numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<100])   
 
-numIms = 5 #number of artificial images to be created
+numIms = 1 #number of artificial images to be created
 
 # create a random parameter vector w/ elements set at 1000
 b = np.full((numPC,numIms),1000)     
 
+# create arrays to store closeness to population mean score
+weighted = np.zeros((numPC,numIms)) 
+score = np.zeros(numIms)
+
 for i in range(numIms):
     for x in range(numPC):  #loops through each element of random parameter vector 
     
-        # imposes that element lies within 3 std dev of eigenvector variation
-        while abs(b[x,i]) > 3*np.sqrt(S[x]):    
-            # element set to value from Gaussian distribution w/ eigenvalue variance          
-            b[x,i] = np.random.normal( 0 , S[x] )        
+        # # imposes that element lies within 3 std dev of eigenvector variation
+        # while abs(b[x,i]) > 3*np.sqrt(S[x]):    
+        #     # element set to value from Gaussian distribution w/ eigenvalue variance          
+        #     b[x,i] = np.random.uniform( 0 , S[x] )
         
+        b[x,i] = -3*np.sqrt(S[x])
+         
+        # weighted paramter     
+        weighted[x,i] = b[x,i] ** 2
+    
+    #sums weighted parameters and normalizes
+    score[i] = ( np.sqrt(sum(weighted[:,i])) ) / ( 3 * np.sqrt(totalVar))
+        
+                
 #multiplies random parameter vector with principal eigenvectors
 residualDef = np.matmul(U[:,0:numPC],b)  
-
 
 # 3. Create transform parameter file
 
@@ -64,11 +76,8 @@ for x in range(numIms):
     
     artificialSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-    display(artificialSkull, "Artificial Skull ")
+    display(artificialSkull, "Artificial Skull Score" + str(score[x]) )
     
-newTP(average)
-averageSkull = reconstruct()
-display(averageSkull, "Average Skull ")
 
 
 

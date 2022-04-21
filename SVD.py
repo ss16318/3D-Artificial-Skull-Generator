@@ -49,16 +49,21 @@ for t in range(len(defMatrix)):
     # finds number of principal components that account for up to 90% of variance
     numPC = len(CumulativeExplainedVariance)
     
-    PC = U[:,0:numPC]
-    transPC = np.transpose(PC)
-    C = np.linalg.inv(np.matmul(transPC,PC))
-    C2 = np.matmul(C,transPC)
+    # PC = U[:,0:numPC]
+    # transPC = np.transpose(PC)
+    # C = np.linalg.inv(np.matmul(transPC,PC))
+    # C2 = np.matmul(C,transPC)
     
-    residual = test - average
+    # residual = test - average
     
-    params = np.matmul(C2,residual)
+    # params = np.matmul(C2,residual)
     
-    estDef = average + (np.matmul(PC,params))
+    # estDef = average + (np.matmul(PC,params))
+    
+    params = np.matmul( np.transpose(U) , (test-average) )
+    
+    estDef = average + np.matmul(U,params)
+    
     
     MSE = mean_squared_error(test, estDef)
     

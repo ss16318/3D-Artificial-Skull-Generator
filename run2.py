@@ -63,16 +63,17 @@ file_list = []              #creates a list of paths to heads
 # file_list.append('/media/sebastian/Data1/CQ500-CT-78/CQ500CT78 CQ500CT78/Unknown Study/CT PLAIN THIN')
 # file_list.append('/media/sebastian/Data1/CQ500-CT-80/CQ500CT80 CQ500CT80/Unknown Study/CT 0.625mm')
 
-file_list.append('/media/sebastian/Data1/CQ500-CT-81/CQ500CT81 CQ500CT81/Unknown Study/CT Thin Plain')
-file_list.append('/media/sebastian/Data1/CQ500-CT-82/CQ500CT82 CQ500CT82/Unknown Study/CT PLAIN THIN')
-file_list.append('/media/sebastian/Data1/CQ500-CT-84/CQ500CT84 CQ500CT84/Unknown Study/CT PLAIN THIN')
-file_list.append('/media/sebastian/Data1/CQ500-CT-85/CQ500CT85 CQ500CT85/Unknown Study/CT PLAIN THIN')
-file_list.append('/media/sebastian/Data1/CQ500-CT-86/CQ500CT86 CQ500CT86/Unknown Study/CT Thin Plain')
-file_list.append('/media/sebastian/Data1/CQ500-CT-88/CQ500CT88 CQ500CT88/Unknown Study/CT PRE CONTRAST THIN')
-file_list.append('/media/sebastian/Data1/CQ500-CT-90/CQ500CT90 CQ500CT90/Unknown Study/CT 0.625mm')
-file_list.append('/media/sebastian/Data1/CQ500-CT-93/CQ500CT93 CQ500CT93/Unknown Study/CT PRE CONTRAST THIN')
-file_list.append('/media/sebastian/Data1/CQ500-CT-98/CQ500CT98 CQ500CT98/Unknown Study/CT PRE CONTRAST THIN')
-file_list.append('/media/sebastian/Data1/CQ500-CT-99/CQ500CT99 CQ500CT99/Unknown Study/CT PRE CONTRAST THIN')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-81/CQ500CT81 CQ500CT81/Unknown Study/CT Thin Plain')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-82/CQ500CT82 CQ500CT82/Unknown Study/CT PLAIN THIN')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-84/CQ500CT84 CQ500CT84/Unknown Study/CT PLAIN THIN')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-85/CQ500CT85 CQ500CT85/Unknown Study/CT PLAIN THIN')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-86/CQ500CT86 CQ500CT86/Unknown Study/CT Thin Plain')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-88/CQ500CT88 CQ500CT88/Unknown Study/CT PRE CONTRAST THIN')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-90/CQ500CT90 CQ500CT90/Unknown Study/CT 0.625mm')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-93/CQ500CT93 CQ500CT93/Unknown Study/CT PRE CONTRAST THIN')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-98/CQ500CT98 CQ500CT98/Unknown Study/CT PRE CONTRAST THIN')
+# file_list.append('/media/sebastian/Data1/CQ500-CT-99/CQ500CT99 CQ500CT99/Unknown Study/CT PRE CONTRAST THIN')
+
 
 
 files = dict()                              #stores list of paths to images in a dictionary
@@ -82,15 +83,16 @@ print(len(file_list))
 
 #pre-process each image
 for x in list(file_list):
-    
-    print(x+1)
 
     # 2. Load Images
     
-    reader = sitk.ImageSeriesReader()                   #creates reader for image series
-    dicom_names = reader.GetGDCMSeriesFileNames(x)      #gets dicom image series
-    reader.SetFileNames(dicom_names)
-    im = reader.Execute()                               #creates images from DICOM file
+    # reader = sitk.ImageSeriesReader()                   #creates reader for image series
+    # dicom_names = reader.GetGDCMSeriesFileNames(x)      #gets dicom image series
+    # reader.SetFileNames(dicom_names)
+    # im = reader.Execute()                               #creates images from DICOM file
+    
+    name = '/media/sebastian/Data1/Oscar/Osca/resample_isosCQ500CT96-000140-00001-00001-0.nii'
+    im = sitk.ReadImage(name)   
     im.SetOrigin((0, 0, 0))                             #set the origin
     print('Image loaded')
 
@@ -100,6 +102,8 @@ for x in list(file_list):
     target_spacing = np.array([0.5,0.5,0.5])       #parameter (spacing of resampled image)
     resampled_im = resample(im, dimension, target_spacing)  #calls resample function
     print('Image resampled')
+    
+    display(resampled_im,'Test')
     
     
     # 4. Global registration

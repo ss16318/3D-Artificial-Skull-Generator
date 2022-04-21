@@ -5,15 +5,18 @@ import numpy as np
 
 def createMatrix():
     
-    files = os.listdir('/home/sebastian/.config/spyder-py3/Parameters')  #lists files in directory
+    path = '/home/sebastian/.config/spyder-py3/Parameters2'
+    
+    files = os.listdir(path)  #lists files in directory
     numIms = len(files)                                                  #counts files in list
     
     for x in range(numIms):                   #loops through each parameter file
         
-        file = "/home/sebastian/.config/spyder-py3/Parameters/tp" + str(x) + ".txt"  #finds path to each parameter file
+        # file = "/home/sebastian/.config/spyder-py3/Parameters/tp" + str(x) + ".txt"  #finds path to each parameter file
     
+        name = path+'/'+files[x]
         #Extract data from parameter map
-        with open (file , 'rt') as pm:                  #opens parameter file for reading
+        with open (name , 'rt') as pm:                  #opens parameter file for reading
             for ln in pm:                               #reads each line to a string
                 
                 # if "GridOrigin" in ln:                                  #gets line with origin data
@@ -41,8 +44,10 @@ def createMatrix():
         
         if x ==0:
             defMatrix = np.zeros((numIms,len(deformations)))    #in the first loop the matrix must be instantiated
-            
-        defMatrix[x,:] = deformations                          #sticks each 1D array of data into row of defMatrix
+        
+        if x != 18:
+            print(x)
+            defMatrix[x,:] = deformations                          #sticks each 1D array of data into row of defMatrix
     
     print("Deformation Created")
     

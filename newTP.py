@@ -9,7 +9,7 @@ def newTP(X):
     ls = X.tolist()                              #converts array to list     
     
     #paths to files (original acts as a template for target)
-    original = r'/home/sebastian/.config/spyder-py3/Parameters/tp0.txt'
+    original = r'/home/sebastian/.config/spyder-py3/Parameters2/tp10.txt'
     target = r'/home/sebastian/.config/spyder-py3/reconstruction.txt'
     
     #creates a new paramter file (target is the reconstruction tm)
@@ -22,25 +22,6 @@ def newTP(X):
     new_file = open(target, "w")     #opens file to write new lines
     
     for ln in lines:                 #loops through each line
-        
-    
-        # if "GridOrigin" in ln:                                  #gets line with origin data
-        #     origin = ls[0:3]                                    #takes first 3 elements
-        #     orgVal = ' '.join(str(e) for e in origin)           #converts list to string
-        #     new_ln1 = '(GridOrigin ' + orgVal + ')\n'
-        #     new_file.write(new_ln1)
-            
-        # if "GridSize" in ln:                                    #gets line with size data
-        #     size = ls[3:6]                                    
-        #     szVal = ' '.join(str(e) for e in size)           
-        #     new_ln2 = '(GridSize ' + szVal + ')\n'
-        #     new_file.write(new_ln2)
-
-        # if "GridSpacing" in ln:                                 #gets line with spacing data
-        #     spacing = ls[6:9]                                    
-        #     spVal = ' '.join(str(e) for e in spacing)           
-        #     new_ln3 = '(GridSpacing ' + spVal + ')\n'
-        #     new_file.write(new_ln3)
 
         if "(TransformParameters" in ln:                        #gets line with control pt def data
             conVal = ' '.join(str(e) for e in ls)      

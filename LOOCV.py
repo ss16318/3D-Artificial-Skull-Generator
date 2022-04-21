@@ -17,8 +17,6 @@ from check import compare
 # 1. Create deformation matrix 
 defMatrix = createMatrix()   #outputs matrix of deformations
 
-defMatrix = np.delete(defMatrix, 41, 0)
-defMatrix = np.delete(defMatrix, 48, 0)
 
 error = np.full((len(defMatrix)),-1)  
 bestEstimation = np.zeros(np.shape(defMatrix)) 
@@ -79,32 +77,32 @@ for t in range(len(defMatrix)):
 averageError = np.mean(error)
 varianceError = np.var(error)
 
-for x in range(1):
+# for x in range(1):
     
-    newTP(bestEstimation[x,:])  #function creates transform paramter file with new control pt deformations
+#     newTP(bestEstimation[x,:])  #function creates transform paramter file with new control pt deformations
 
-    # 4. Artificial skull reconstruction 
+#     # 4. Artificial skull reconstruction 
     
-    estimatedSkull = reconstruct()   #deforms model image using DFM reconstruction from new pm
+#     estimatedSkull = reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-    display( estimatedSkull, "Estimated Skull ")
+#     display( estimatedSkull, "Estimated Skull ")
     
-    newTP(avg)
-    average = reconstruct()
-    compare(estimatedSkull,average,'Compare')
+    # newTP(avg)
+    # average = reconstruct()
+    # compare(estimatedSkull,average,'Compare')
     
     
-    newTP( defMatrix[x,:] )
+    # newTP( defMatrix[x,:] )
 
-    realSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
+    # realSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-    display(realSkull, "Real Skull ")
+    # display(realSkull, "Real Skull ")
     
-    compare(estimatedSkull,realSkull, "Comparison 1")
+    # compare(estimatedSkull,realSkull, "Comparison 1")
     
-    alignedSkull = rigidReg(estimatedSkull, realSkull)
+    # alignedSkull = rigidReg(estimatedSkull, realSkull)
     
-    compare(alignedSkull,realSkull, "Comparison 2")
+    # compare(alignedSkull,realSkull, "Comparison 2")
     
     
     

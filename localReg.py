@@ -17,7 +17,7 @@ def ffd ( im , alpha3D, num):
     parameterMap['NumberOfResolutions'] = ("6",)                                                     #number of resolutions (pyramid levels)
     parameterMap["DefaultPixelValue"] = ["-1000"]
     parameterMap['NumberOfSpatialSamples'] = [str((alpha3D.GetSize()[0]*alpha3D.GetSize()[1]*alpha3D.GetSize()[2])/5000)] #downsamples model by 5000
-    parameterMap['GridSpacingSchedule'] = ('16.0' , '16.0' , '8.0' , '8.0' , '4.0' , '4.0')           #control point spacing
+    parameterMap['GridSpacingSchedule'] = ('16.0' , '8.0' , '8.0' , '4.0' , '4.0' , '2.0')           #control point spacing
     parameterMap.asdict()                                                                            #the rest of map will follow preset settings
 
     elastixImageFilter = sitk.ElastixImageFilter()      #creates a filter for registration                                                
