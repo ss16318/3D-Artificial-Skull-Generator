@@ -11,7 +11,6 @@ def getAlpha3D():
     
     #adjusts image for registration (via numpy package)
     alpha3D = np.rot90( alpha3D, 1, (2,1))                 #rotate Alpha3D rot90(array,#times,plane of rotation)
-    #alpha3D = np.flip(alpha3D,axis=1)                      #flips image to match input data
     alpha3D -= 1480                                        #roughly transforms [m s^-1] to [HU]
     default_value = -1000                                  #HU for air = -1000
     alpha3D[alpha3D==0] = default_value    

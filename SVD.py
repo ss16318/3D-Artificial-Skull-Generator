@@ -43,22 +43,13 @@ for t in range(len(defMatrix)):
     totalVar = sum(S)   #sum of eigenvalues (which represent variance)
     
     # % explained variance for increasing number of eigenmodes
-    CumulativeExplainedVariance = 100*np.cumsum(S)/totalVar       
+    CumulativeExplainedVariance = 100*np.cumsum(S)/totalVar
+
+    displayCEV(CumulativeExplainedVariance)       
     
     
     # finds number of principal components that account for up to 90% of variance
     numPC = len(CumulativeExplainedVariance)
-    
-    # PC = U[:,0:numPC]
-    # transPC = np.transpose(PC)
-    # C = np.linalg.inv(np.matmul(transPC,PC))
-    # C2 = np.matmul(C,transPC)
-    
-    # residual = test - average
-    
-    # params = np.matmul(C2,residual)
-    
-    # estDef = average + (np.matmul(PC,params))
     
     params = np.matmul( np.transpose(U) , (test-average) )
     
@@ -69,28 +60,25 @@ for t in range(len(defMatrix)):
     
     error[t] = MSE
     estimation[t,:] = estDef
-        
-averageError = np.mean(error)
-varianceError = np.var(error)
 
-for x in range(1):
+# for x in range(1):
     
-    newTP(estimation[x,:])  #function creates transform paramter file with new control pt deformations
+#     newTP(estimation[x,:])  #function creates transform paramter file with new control pt deformations
 
-    # 4. Artificial skull reconstruction 
+#     # 4. Artificial skull reconstruction 
     
-    estimatedSkull = reconstruct()   #deforms model image using DFM reconstruction from new pm
+#     estimatedSkull = reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-    display( estimatedSkull, "Estimated Skull ")
+#     display( estimatedSkull, "Estimated Skull ")
     
-    newTP( defMatrix[x,:] )
+#     newTP( defMatrix[x,:] )
 
-    realSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
+#     realSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-    display(realSkull, "Real Skull ")
+#     display(realSkull, "Real Skull ")
     
-    compare(estimatedSkull,realSkull, "Comparison 1")
+#     compare(estimatedSkull,realSkull, "Comparison 1")
     
-    alignedSkull = rigidReg(estimatedSkull, realSkull)
+#     alignedSkull = rigidReg(estimatedSkull, realSkull)
     
-    compare(alignedSkull,realSkull, "Comparison 2")
+#     compare(alignedSkull,realSkull, "Comparison 2")

@@ -14,10 +14,11 @@ from check import *
 
 
 # Find location of images
-path = '/media/sebastian/Data1/Oscar/Oscar/qure_ai/nii_reorient/'
+path = '/media/sebastian/Data1/AAOscar/Oscar/qure_ai/nii_reorient/'
 files = os.listdir(path)
 
-ix = [7,8,21,23,24,28,31,35,37,41,43,45,48,53,55,61,62,63,65,66,68,70,75,77,82,84,88,91,101,103,110,112,113,121,123,126,137,138,141,144,150,154,156,163,170,178,182,185]
+ix = [192,193,199,7,8,21,23,24,28,31,35,37,41,43,45,48,53,55,61,62,63,65,66,68,70,75,77,82,84,88,91,101,103,110,112,113,121,123,126,137,138,141,144,150,154,156,163,170,178,182,185]
+
 
 alpha3D = getAlpha3D()          # Load model image
 
@@ -30,6 +31,7 @@ for x in range(len(ix)):
     # Resample each image
     im.SetOrigin((0,0,0))
     im.SetDirection((1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0))
+    
                          
     # 4. Global registration
     rigid_reg_im = rigidReg(im, alpha3D)            #calls rigid registration function

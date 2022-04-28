@@ -109,6 +109,8 @@ def displayCEV(CEV):
 
     return
 
+## DISPLAYS WARPED IMAGE GRIDS
+
 def displayGrid(Grid,Im,Title):
     
 

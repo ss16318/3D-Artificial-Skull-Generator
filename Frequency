@@ -1,0 +1,33 @@
+## MODELLING
+
+import numpy as np
+
+from defMatrix import createMatrix
+from display import *
+
+# 1. Create deformation matrix 
+defMatrix = createMatrix()   #outputs matrix of deformations
+
+defMatrix = np.delete(defMatrix, 41, 0)
+
+
+# 2. Perform SVD on matrix
+dm = defMatrix.T                                       #transposes matrix
+average = np.mean(dm,axis=1)                    #finds average of each column
+X = dm - np.tile(average,(dm.shape[1],1)).T     #subtracts average to get a zero mean
+
+#performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
+U , S , VT = np.linalg.svd(X,full_matrices=0)
+
+params = np.zeros( (len(S),len(S)) )
+     
+for t in range(len(defMatrix)): 
+
+    test = defMatrix[t,:]
+
+    params[t,:] = np.matmul( np.transpose(U) , (test-average) )
+    
+
+for n in range(len(params)):
+    params[n, :] = params[:, n] / (3*np.sqrt(S[n]))
+ef
