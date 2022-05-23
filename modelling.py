@@ -15,37 +15,39 @@ from alpha3D import getAlpha3D
 # 1. Create deformation matrix 
 defMatrix = createMatrix()   #outputs matrix of deformations
 
+# 2. Split Train/Test Data
+split = int(defMatrix.shape[0]*0.8)
 
-# 2. Perform SVD on matrix
+trainDef = defMatrix[0:split,:]
+testDef = defMatrix[split:defMatrix.shape[0],:]
 
-dm = defMatrix.T                                #transposes matrix
+
+# 3. Perform SVD on matrix
+dm = trainDef.T                                 #transposes matrix
 average = np.mean(dm,axis=1)                    #finds average of each column
 X = dm - np.tile(average,(dm.shape[1],1)).T     #subtracts average to get a zero mean
 
-#performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
+#performs SVD on zero mean deformation matirx (U are eigenvectors & S singular values)
 U , S , VT = np.linalg.svd(X,full_matrices=0)
 
+L = np.square(S)/(S.shape[0]-1)     #Convert singular values to Eigenvalues
 
-# 3. Perform PCA Modelling
-
-totalVar = sum(S)   #sum of eigenvalues (which represent variance)
+# 4. Perform PCA Modelling
+totalVar = sum(L)                   #sum of eigenvalues (which represent variance)
 
 # % explained variance for increasing number of eigenmodes
-CumulativeExplainedVariance = 100*np.cumsum(S)/totalVar       
+CumulativeExplainedVariance = 100*np.cumsum(L)/totalVar       
 
 displayCEV(CumulativeExplainedVariance)
 
 # finds number of principal components that account for up to 90% of variance
-numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<100])   
+numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<95])   
 
 numIms = 1 #number of artificial images to be created
 
 # create a random parameter vector w/ elements set at 1000
 b = np.full((numPC,numIms),1000)     
 
-# create arrays to store closeness to population mean score
-weighted = np.zeros((numPC,numIms)) 
-score = np.zeros(numIms)
 
 for i in range(numIms):
     for x in range(numPC):  #loops through each element of random parameter vector 
@@ -55,13 +57,7 @@ for i in range(numIms):
         #     # element set to value from Gaussian distribution w/ eigenvalue variance          
         #     b[x,i] = np.random.uniform( 0 , S[x] )
         
-        b[x,i] = -3*np.sqrt(S[x])
-         
-        # weighted paramter     
-        weighted[x,i] = b[x,i] ** 2
-    
-    #sums weighted parameters and normalizes
-    score[i] = ( np.sqrt(sum(weighted[:,i])) ) / ( 3 * np.sqrt(totalVar))
+        b[x,i] = -np.sqrt(L[x])
         
                 
 #multiplies random parameter vector with principal eigenvectors
@@ -76,7 +72,7 @@ for x in range(numIms):
     
     artificialSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-    display(artificialSkull, "Artificial Skull Score" + str(score[x]) )
+    display(artificialSkull, "Extreme Skull 1 " )
     
 
 

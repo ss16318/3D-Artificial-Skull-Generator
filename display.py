@@ -2,9 +2,7 @@
 
 import SimpleITK as sitk
 import matplotlib.pyplot as plt
-import numpy as np
-
-
+import numpy as np  
 
 def display( im , Title ):
 
@@ -17,10 +15,10 @@ def display( im , Title ):
     cbar  = plt.colorbar()                                    #displays colorbar
     ax = plt.gca()                                            #gets plot axis
     ax.invert_yaxis()                                         #flips y-axis for intuitive view
-    ax.set_ylabel("Pixels (0.5mm spacing)")                   #y axis label
-    ax.set_xlabel("Pixels (0.5mm spacing)")                   #x axis label
+    ax.set_ylabel("Slices")                   #y axis label
+    ax.set_xlabel("Slices")                   #x axis label
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)      #colorbar title
-    plt.title(Title + " (a) Transverse view")                 #adds title to plot                   
+    plt.title("(a) " + Title + " (Transverse view)")                 #adds title to plot                   
     
     #same setup for frontal view
     plt.figure()
@@ -30,10 +28,10 @@ def display( im , Title ):
     cbar  = plt.colorbar() 
     ax = plt.gca()
     ax.invert_yaxis()
-    ax.set_ylabel("Pixels (0.5mm spacing)")
-    ax.set_xlabel("Pixels (0.5mm spacing)")
+    ax.set_ylabel("Slices")
+    ax.set_xlabel("Slices")
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)
-    plt.title(Title + " (b) Frontal view")
+    plt.title("(b) " + Title + " (Frontal view)")
     
     #same setup for saggital view
     plt.figure()
@@ -43,10 +41,10 @@ def display( im , Title ):
     cbar  = plt.colorbar() 
     ax = plt.gca()
     ax.invert_yaxis()
-    ax.set_ylabel("Pixels (0.5mm spacing)")
-    ax.set_xlabel("Pixels (0.5mm spacing)")
+    ax.set_ylabel("Slices")
+    ax.set_xlabel("Slices")
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)
-    plt.title(Title + " (c) Sagittal View")
+    plt.title("(c) " + Title + " (Sagittal View)")
     
     return plt.show()                                        #displays figures                             
 
@@ -99,12 +97,15 @@ def displayCEV(CEV):
 
     modeNum = np.arange(len(CEV))                    # Eigenmode number (just a list) 
     
-    plt.bar(modeNum+1, CEV)                          # plot bar of cumulative explained variance
+    plt.plot(modeNum+1, CEV)                          # plot bar of cumulative explained variance
     ax = plt.gca()
-    ax.set_ylabel("Explained Variance (%)")                 
-    ax.set_xlabel("Number of Modes")
+    ax.set_ylabel("Cumulative Explained Variance (%)")                 
+    ax.set_xlabel("Number of PCs")
     plt.xlim([0,len(CEV)+1])
-    plt.title("Explained Variance vs Number of Modes")
+    plt.title("Cumulaive Explained Variance vs Number of Modes")
+    plt.axhline(y=95, color='r', linestyle='-')
+    plt.axvline(x=35, color='r', linestyle='--')
+    plt.legend(['Cumulative explained variance','95% explained variance cut-off','PC cut-off'])
     plt.show()
 
     return

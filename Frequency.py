@@ -27,7 +27,7 @@ for t in range(len(defMatrix)):
 
 component = np.zeros((np.shape(params)))
 for n in range(len(params[0])):
-    params[:,n] = params[:, n] / (3*np.sqrt(S[n]))
+    params[:,n] = params[:, n] / (3*np.sqrt(S[n]*S[n]/50))
     component[:,n] = n+1
     
     

@@ -8,6 +8,7 @@ from reconstruct import reconstruct
 from display import *
 from globalReg import rigidReg
 from check import compare
+import matplotlib.pyplot as plt
 
 
 
@@ -44,7 +45,7 @@ for t in range(len(defMatrix)):
     
     
     # finds number of principal components that account for up to 90% of variance
-    numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<60])   
+    numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<100])   
     
     numIter = 100 #number of artificial images to be created
     
@@ -57,7 +58,9 @@ for t in range(len(defMatrix)):
             # imposes that element lies within 3 std dev of eigenvector variation
             while abs(b[x]) > 3*np.sqrt(S[x]):    
                 # element set to value from Gaussian distribution w/ eigenvalue variance          
-                b[x] = np.random.uniform(-2*np.sqrt(S[x]) , 2*np.sqrt(S[x]) )#np.random.normal( 0 , S[x] )        
+                #b[x] = np.random.uniform(-2*np.sqrt(S[x]) , 2*np.sqrt(S[x]) )
+                b[x] = np.random.normal( 0 , 3*np.sqrt(S[x]*S[x]/(numPC-1) ) )       
+                #b[x] = 0
             
         #multiplies random parameter vector with principal eigenvectors
         residualDef = np.matmul(U[:,0:numPC],b)  
@@ -73,6 +76,10 @@ for t in range(len(defMatrix)):
         
 averageError = np.mean(error)
 varianceError = np.var(error)
+
+
+plt.bar(np.arange(1,len(error)+1),error)
+plt.show()
 
 # for x in range(1):
     
