@@ -50,14 +50,17 @@ b = np.full((numPC,numIms),1000)
 
 
 for i in range(numIms):
-    for x in range(numPC):  #loops through each element of random parameter vector 
+    #for x in range(numPC):  #loops through each element of random parameter vector 
     
         # # imposes that element lies within 3 std dev of eigenvector variation
         # while abs(b[x,i]) > 3*np.sqrt(S[x]):    
         #     # element set to value from Gaussian distribution w/ eigenvalue variance          
         #     b[x,i] = np.random.uniform( 0 , S[x] )
+       
         
-        b[x,i] = -np.sqrt(L[x])
+    x = 0
+    b[x,i] = 3*np.sqrt(L[x])
+
         
                 
 #multiplies random parameter vector with principal eigenvectors
@@ -72,7 +75,7 @@ for x in range(numIms):
     
     artificialSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
 
-    display(artificialSkull, "Extreme Skull 1 " )
+    display(artificialSkull, "Skull 1" )
     
 
 

@@ -827,3 +827,110 @@ display(artificialSkull, "Average Skull" )
 runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
 display(artificialSkull, "Average Skull" )
 runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+U[:,0:numPC].shape
+centredTest[:,1].shape
+debugfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Mon May 23 20:31:55 2022)---
+runfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue May 24 15:19:05 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Tue May 24 18:47:45 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed May 25 12:11:27 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+compare(originalSkull,estimateSkull,'')
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+np.sqrt(varianceError)
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+np.sqrt(varianceError)
+runfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Sat May 28 16:46:55 2022)---
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+params.shape[0]
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Distance.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Jun  1 19:03:25 2022)---
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Jun  2 11:20:05 2022)---
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+A = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
+
+>>>
+>>>
+A = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
+B = np.dot(A, np.array([1, 2])) + 3
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+trainX.shape[0]
+trainY.shape[0]
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+model.intercept
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Jun  2 14:27:34 2022)---
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+plt.bar(range(1,37),volumeVariation)
+ax = plt.gca()
+ax.set_ylabel("Volume Variation (%)")
+ax.set_xlabel("Principal Component")
+debugfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Distance.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')

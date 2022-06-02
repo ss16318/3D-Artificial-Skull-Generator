@@ -40,10 +40,10 @@ def compare(im1, im2 , Title):
     cbar  = plt.colorbar()                                    #displays colorbar
     ax = plt.gca()                                            #gets plot axis
     ax.invert_yaxis()                                         #flips y-axis for intuitive view
-    ax.set_ylabel("Pixels (0.5mm spacing)")                   #y axis label
-    ax.set_xlabel("Pixels (0.5mm spacing)")                   #x axis label
+    ax.set_ylabel("Slices")                   #y axis label
+    ax.set_xlabel("Slices")                   #x axis label
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)      #colorbar title
-    plt.title(Title + " (a) Transverse view")                 #adds title to plot                   
+    plt.title(Title + " (a) (Transverse view)")                 #adds title to plot                   
     
     #same setup for frontal view
     plt.figure()
@@ -53,10 +53,10 @@ def compare(im1, im2 , Title):
     cbar  = plt.colorbar() 
     ax = plt.gca()
     ax.invert_yaxis()
-    ax.set_ylabel("Pixels (0.5mm spacing)")
-    ax.set_xlabel("Pixels (0.5mm spacing)")
+    ax.set_ylabel("Slices")
+    ax.set_xlabel("Slices")
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)
-    plt.title(Title + "(b) Frontal view")
+    plt.title(Title + "(b) (Frontal view)")
     
     #same setup for saggital view
     plt.figure()
@@ -66,10 +66,10 @@ def compare(im1, im2 , Title):
     cbar  = plt.colorbar() 
     ax = plt.gca()
     ax.invert_yaxis()
-    ax.set_ylabel("Pixels (0.5mm spacing)")
-    ax.set_xlabel("Pixels (0.5mm spacing)")
+    ax.set_ylabel("Slices")
+    ax.set_xlabel("Slices")
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)
-    plt.title(Title + "(c) Sagittal View")
+    plt.title(Title + "(c) (Sagittal View)")
     
     return plt.show()     
 

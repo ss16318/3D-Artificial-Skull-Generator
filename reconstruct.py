@@ -9,6 +9,9 @@ def reconstruct():
     alpha3D = getAlpha3D()  #gets model image
     
     path = '/home/sebastian/.config/spyder-py3/reconstruction.txt'
+    
+    # path = '/home/sebastian/.config/spyder-py3/TransformParameters.0.txt'
+    
     pm = sitk.ReadParameterFile(path)    #gets parameter map from transform file
 
     #EXTRACTING DFMs

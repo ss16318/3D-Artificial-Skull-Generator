@@ -11,7 +11,7 @@ def rigidReg( im , alpha3D):
     parameterMap['Registration'] = ("MultiMetricMultiResolutionRegistration",)
     parameterMap['FixedImagePyramid'] = ('FixedShrinkingImagePyramid',)                              #applies registration at different resolutions (only downsampling applied)
     parameterMap['MovingImagePyramid'] = ('MovingShrinkingImagePyramid',)                            
-    parameterMap['Metric'] = ("AdvancedNormalizedCorrelation", "AdvancedMattesMutualInformation")    #cross-correlation & probability distribution metrics
+    parameterMap['Metric'] = ( "AdvancedMattesMutualInformation",)    #cross-correlation & probability distribution metrics "AdvancedNormalizedCorrelation",
     parameterMap['MaximumNumberOfIterations'] = ('1500','350','350','350','350','350')               #number of registration iterations at each pyramid level
     parameterMap['NumberOfResolutions'] = ("6",)                                                     #number of pyramid levels
     parameterMap["DefaultPixelValue"] = ["-1000"]
@@ -24,7 +24,7 @@ def rigidReg( im , alpha3D):
     elastixImageFilter.LogToFileOn()                       #logs process in terminal
     elastixImageFilter.Execute()                           #performs registration
 
-    return elastixImageFilter.GetResultImage()             #returns output image
+    return elastixImageFilter.GetResultImage()        #returns output image
 
 
 ## AFFINE REGISTRATION

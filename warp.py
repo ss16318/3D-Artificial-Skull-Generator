@@ -9,12 +9,12 @@ from display import *
 def warpGrid(skull,Y):
     
     grid = sitk.GridSource(outputPixelType=sitk.sitkUInt16, size=(430,496,345),
-                                 sigma=(0.1,0.1,0.1), gridSpacing=(50.0,50.0,50.0))
+                                 sigma=(0.1,0.1,0.1), gridSpacing=(100.0,100.0,100.0))
 
     
     if Y == 0:
     
-       return displayGrid(grid,skull,"Pre-Warping")
+       return displayGrid(grid,skull,'')
         
     else: 
     

@@ -17,79 +17,86 @@ from volume import skullVol
 # 1. Create deformation matrix 
 defMatrix = createMatrix()   #outputs matrix of deformations
 
+# 2. Split Train/Test Data
+split = int(defMatrix.shape[0]*0.8)
 
-# 2. Perform SVD on matrix
+trainDef = defMatrix[0:split,:]
+testDef = defMatrix[split:defMatrix.shape[0],:]
 
-dm = defMatrix.T                                #transposes matrix
+
+# 3. Perform SVD on matrix
+dm = trainDef.T                                 #transposes matrix
 average = np.mean(dm,axis=1)                    #finds average of each column
 X = dm - np.tile(average,(dm.shape[1],1)).T     #subtracts average to get a zero mean
 
 #performs SVD on zero mean deformation matirx (U are eigenvectors & S eigenvalues)
 U , S , VT = np.linalg.svd(X,full_matrices=0)
 
+L = np.square(S)/(S.shape[0]-1)     #Convert singular values to Eigenvalues
+
+totalVar = sum(L)                   #sum of eigenvalues (which represent variance)
+
+# % explained variance for increasing number of eigenmodes
+CumulativeExplainedVariance = 100*np.cumsum(L)/totalVar       
+
+# finds number of principal components that account for up to 90% of variance
+numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<95]) 
+
 newTP(average)
 
 averageSkull = reconstruct()
 
-averageVol = skullVol(averageSkull, 500)
+averageVol = skullVol(averageSkull, 50)
+volumeVariation = np.zeros(numPC)
 
-volumeVariation = np.zeros(defMatrix.shape[0])
+warpedGrid = warpGrid(averageSkull,0)
 
-# warpedGrid = warpGrid(averageSkull,0)
-
-#PC = 7
-for PC in range(defMatrix.shape[0]):
+for PC in range(numPC):
     # create a random parameter vector w/ elements set at 1000
-    b = np.full((U.shape[1],1),1000)
-       
-    b[PC] = 3*S[PC]*(1/np.sqrt(defMatrix.shape[0]-1))     
+    b = np.full((U.shape[1],1),0)
+    
+    b[PC] = 3*np.sqrt(L[PC])   
      
     #multiplies random parameter vector with principal eigenvectors
     residualDef = U[:,PC] * b[PC] 
     
-    newDef = average + residualDef
     
-    newTP(newDef)  #function creates transform paramter file with new control pt deformations
+    newDef1 = average + residualDef
     
-    # 4. Artificial skull reconstruction 
+    newTP(newDef1)  #function creates transform paramter file with new control pt deformations 
     
     artificialSkull1 = reconstruct()   #deforms model image using DFM reconstruction from new pm
     
-    warpedGrid = warpGrid(averageSkull,1)
+    # warpedGrid1 = warpGrid(artificialSkull1, 1)
     
-    #displayGrid(warpedGrid,artificialSkull1," +ve Warping with eigenmode " + str(PC+1) )
+    # displayGrid(warpedGrid1,artificialSkull1,"Principal Component " + str(PC+1) )
     
     
-    newDef = average - residualDef
+    newDef2 = average - residualDef
     
-    newTP(newDef)  #function creates transform paramter file with new control pt deformations
-    
-    # 4. Artificial skull reconstruction 
+    newTP(newDef2)  #function creates transform paramter file with new control pt deformations
     
     artificialSkull2 = reconstruct()   #deforms model image using DFM reconstruction from new pm
     
-    warpedGrid = warpGrid(averageSkull,1)
+    # warpedGrid2 = warpGrid(artificialSkull2, 1)
     
-    vol1 = skullVol(artificialSkull1, 500)
-    vol2 = skullVol(artificialSkull2, 500)
+    # displayGrid(warpedGrid2,artificialSkull2,"Principal Component " + str(PC+1) )
     
+    vol1 = skullVol(artificialSkull1, 50)
+    vol2 = skullVol(artificialSkull2, 50)
     volumeVariation[PC] = abs(vol1-vol2)*100 / averageVol
     
-    #displayGrid(warpedGrid,artificialSkull2," -ve Warping with eigenmode " + str(PC+1) )
     
-    #compare(artificialSkull1,artificialSkull2,'Comparison')
     
-    #print( skullVol(averageSkull,500))
+    # compare(artificialSkull1,artificialSkull2,'Comparison')
     
-    #print( skullVol(artificialSkull1,500))
-    
-    #print( skullVol(artificialSkull2,500))
 
-plt.bar(range(volumeVariation.shape[0]),volumeVariation)
+
+plt.bar(range(1,37),volumeVariation)
 ax = plt.gca()
 ax.set_ylabel("Volume Variation (%)")
 ax.set_xlabel("Principal Component")
-plt.title("Skull Volume Variation for each Principal Component")
+
     
     
     
