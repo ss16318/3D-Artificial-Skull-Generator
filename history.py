@@ -976,3 +976,4 @@ debugfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebasti
 runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
 debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
