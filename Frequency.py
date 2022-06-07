@@ -32,57 +32,53 @@ CumulativeExplainedVariance = 100*np.cumsum(L)/totalVar
 
 displayCEV(CumulativeExplainedVariance)
 
-# finds number of principal components that account for up to 90% of variance
+# finds number of principal components that account for up to 95% of variance
 numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<95])   
 
 
+# 4. Analyze model parameters
 centredTest = testDef.T - np.tile(average,(testDef.T.shape[1],1)).T     #subtracts average to get a zero mean
 
-params = np.zeros( (numPC , centredTest.shape[1] ))
-# params = np.zeros( (numPC , X.shape[1] ))
+params = np.zeros( (numPC , centredTest.shape[1] ))                     #creates model parameter matrix
 
-PC = np.zeros((np.shape(params)))
+PC = np.zeros((np.shape(params)))                                       #PC counter for plot
 
 for x in range(centredTest.shape[1]):
-    params[:,x] = np.matmul( np.transpose( U[:,0:numPC]) , X[:,x] )
+    
+    params[:,x] = np.matmul( np.transpose( U[:,0:numPC]) , X[:,x] )     #calculate parameters for each skull
     
     for n in range(params.shape[0]):
-    
-        # if n > 4:
-        
-        #     params[n,x] = params[n,x] / (3*(np.sqrt(L[n])))
-            
-        # elif n >= 1 :
-        #     params[n,x] = params[n,x] / ((np.sqrt(L[n])))
-            
-        # else:
-        #     params[n,x] = params[n,x] / (0.5*(np.sqrt(L[n])))
 
-        params[n,x] = params[n,x] / (np.sqrt(L[n]))
+        params[n,x] = params[n,x] / (np.sqrt(L[n]))                     #standardize parameters
             
         PC[n,x] = n+1
         
 for n in range(params.shape[0]):
     
+    #show paramter distriubtion for each PC
     plt.hist(params[n,:])
-    plt.title('PC '+str(n+1))
+    plt.title('PC '+str(n+1) + ' distriubtion of model parameters')
+    plt.xlabel("Standardized Model Parameter")
+    plt.ylabel("Frequency")
     plt.show()
     
-    
+
+#create 1D arrays of data for scatter
 x = np.ravel(params)
 y = np.ravel(PC)
 
+#count number of points within 3 standard deviations 
 insideRange = np.sum( abs(x) <= 3)
 proportionIn = insideRange*100 / len(x)
 
+#component-wise scatter plot
 plt.scatter(x,y,s=1)
 plt.ylabel("Principal Component")
 plt.xlabel("Standardized model parameters")
 plt.title("(a)" )
 plt.show()
 
-
-
+#overall parameter distribution
 plt.hist(x)
 plt.xlabel("Standardized Model Parameter")
 plt.ylabel("Frequency")

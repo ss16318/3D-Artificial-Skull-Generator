@@ -934,3 +934,45 @@ runfile('/home/sebastian/.config/spyder-py3/reconstructionError.py', wdir='/home
 debugfile('/home/sebastian/.config/spyder-py3/Distance.py', wdir='/home/sebastian/.config/spyder-py3')
 debugfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+trainX[:,0]
+trainX[:,0].shape
+debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Distance.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Distance.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Sat Jun  4 11:27:08 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/run3.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Distance.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+kmeans.centroid
+kmeansPCA.centroid
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+np.sum(np.square(distance))
+np.sum(np.square(U[:,0]))
+
+
+
+
+U[:,0].T
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+np.square(distance)
+X = np.square(distance)
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/eigenWarp.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')

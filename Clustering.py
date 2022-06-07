@@ -47,18 +47,39 @@ for x in range(trainDef.shape[0]):
         reproj[x,j] = np.matmul (trainDef[x,:] , U[:,j] ) 
 
     
-kmeansPCA = KMeans(n_clusters=5, random_state=0).fit(reproj)
+# kmeansPCA = KMeans(n_clusters=2, random_state=0).fit(reproj)
 
-labelsPCA = kmeansPCA.fit_predict(reproj)
+# labelsPCA = kmeansPCA.fit_predict(reproj)
 
-count = np.where(labelsPCA==4)
 
-kmeansRaw = KMeans(n_clusters=5, random_state=0).fit(trainDef)
+# kmeansRaw = KMeans(n_clusters=5, random_state=0).fit(trainDef)
 
-labelsRaw = kmeansRaw.fit_predict(trainDef)
+# labelsRaw = kmeansRaw.fit_predict(trainDef)
 
-count2 = np.where(labelsRaw==4)
+# count = np.where(labelsRaw==2)
+
     
+# centres = kmeansRaw.cluster_centers_
+
+# distance = centres[0,:] - centres[2,:]
+
+# theta = np.zeros(numPC)
+
+# for x in range (numPC):
+    
+#     theta[x] = np.abs( np.inner(distance,U[:,x]) / np.sqrt(np.sum(np.square(distance)) ) )
+
+
+# plt.bar(range(1,37),theta)
+# ax = plt.gca()
+# ax.set_ylabel("Inner Product")
+# ax.set_xlabel("Principal Component")
+# plt.show()
+
+
+
+
+
 
                 
 

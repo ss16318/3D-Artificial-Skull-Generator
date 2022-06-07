@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 defMatrix = createMatrix()   #outputs matrix of deformations
 
 # 2. Split Train/Test Data
-split = int(defMatrix.shape[0]*0.8)
+split = int(defMatrix.shape[0]*0.6)
 
 trainDef = defMatrix[0:split,:]
 testDef = defMatrix[split:defMatrix.shape[0],:]
@@ -41,17 +41,11 @@ CumulativeExplainedVariance = 100*np.cumsum(L)/totalVar
 
 
 # finds number of principal components that account for up to 90% of variance
-numPC = len(CumulativeExplainedVariance[CumulativeExplainedVariance<95])     
+numPC = 10#len(CumulativeExplainedVariance[CumulativeExplainedVariance<95])     
     
 for x in range(testDef.shape[0]):
     
     b = np.matmul( np.transpose(U[:,0:numPC]) , np.transpose(testDef[x,:]) - average )
-    
-    # for n in range(b.shape[0]):
-        
-    #     if abs(b[n]) > 3*np.sqrt(L[n]):
-    #         b[n] = 3*np.sqrt(L[n]) * np.sign(b[n])
-        
 
     defEst[:,x] = average + np.matmul( U[:,0:numPC] , b )
     

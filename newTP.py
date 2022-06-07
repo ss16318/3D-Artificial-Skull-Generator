@@ -13,7 +13,7 @@ def newTP(X):
     target = r'/home/sebastian/.config/spyder-py3/reconstruction.txt'
     
     #creates a new paramter file (target is the reconstruction tm)
-    shutil.copyfile(original,target)   #copies original data and saves in target
+    shutil.copyfile(original,target) #copies original data and saves in target
     
     file = open(target, "r")         #opens file to read
     lines = file.readlines()         #reads and copies content line by line

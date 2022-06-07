@@ -43,7 +43,7 @@ def compare(im1, im2 , Title):
     ax.set_ylabel("Slices")                   #y axis label
     ax.set_xlabel("Slices")                   #x axis label
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)      #colorbar title
-    plt.title(Title + " (a) (Transverse view)")                 #adds title to plot                   
+    plt.title(Title)                 #adds title to plot                   
     
     #same setup for frontal view
     plt.figure()
@@ -56,7 +56,7 @@ def compare(im1, im2 , Title):
     ax.set_ylabel("Slices")
     ax.set_xlabel("Slices")
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)
-    plt.title(Title + "(b) (Frontal view)")
+    plt.title(Title)
     
     #same setup for saggital view
     plt.figure()
@@ -69,7 +69,7 @@ def compare(im1, im2 , Title):
     ax.set_ylabel("Slices")
     ax.set_xlabel("Slices")
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)
-    plt.title(Title + "(c) (Sagittal View)")
+    plt.title(Title)
     
     return plt.show()     
 

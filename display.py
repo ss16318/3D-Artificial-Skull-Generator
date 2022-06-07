@@ -18,7 +18,8 @@ def display( im , Title ):
     ax.set_ylabel("Slices")                   #y axis label
     ax.set_xlabel("Slices")                   #x axis label
     cbar.ax.set_ylabel("Intensity (HU)" , fontsize = 10)      #colorbar title
-    plt.title("(a) " + Title + " (Transverse view)")                 #adds title to plot                   
+    #plt.title("(a) " + Title + " (Transverse view)")         #adds title to plot                   
+    plt.title(Title)      
     
     #same setup for frontal view
     plt.figure()

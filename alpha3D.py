@@ -1,6 +1,5 @@
 import numpy as np
 import SimpleITK as sitk
-
 from display import display
 
 def getAlpha3D():

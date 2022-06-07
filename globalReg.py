@@ -6,16 +6,16 @@ import SimpleITK as sitk
 
 def rigidReg( im , alpha3D):
     
-    parameterMap = sitk.GetDefaultParameterMap("rigid")                                              #rigid = rotation + translation
+    parameterMap = sitk.GetDefaultParameterMap("rigid")                                 #rigid = rotation + translation
     
     parameterMap['Registration'] = ("MultiMetricMultiResolutionRegistration",)
-    parameterMap['FixedImagePyramid'] = ('FixedShrinkingImagePyramid',)                              #applies registration at different resolutions (only downsampling applied)
+    parameterMap['FixedImagePyramid'] = ('FixedShrinkingImagePyramid',)                 #applies registration at different resolutions (only downsampling applied)
     parameterMap['MovingImagePyramid'] = ('MovingShrinkingImagePyramid',)                            
-    parameterMap['Metric'] = ( "AdvancedMattesMutualInformation",)    #cross-correlation & probability distribution metrics "AdvancedNormalizedCorrelation",
-    parameterMap['MaximumNumberOfIterations'] = ('1500','350','350','350','350','350')               #number of registration iterations at each pyramid level
-    parameterMap['NumberOfResolutions'] = ("6",)                                                     #number of pyramid levels
+    parameterMap['Metric'] = ( "AdvancedMattesMutualInformation",)     
+    parameterMap['MaximumNumberOfIterations'] = ('1500','350','350','350','350','350')  #number of registration iterations at each pyramid level
+    parameterMap['NumberOfResolutions'] = ("6",)                                        #number of pyramid levels
     parameterMap["DefaultPixelValue"] = ["-1000"]
-    parameterMap.asdict()                                                                            #the rest of map will follow preset settings
+    parameterMap.asdict()                                                               #the rest of map will follow preset settings
     
     elastixImageFilter = sitk.ElastixImageFilter()         #creates a registration filter
     elastixImageFilter.SetParameterMap(parameterMap)       #uses parameter map to define filter
