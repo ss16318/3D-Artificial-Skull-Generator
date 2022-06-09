@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-# *** Spyder Python Console History Log ***
-
-## ---(Wed Nov 17 14:36:53 2021)---
 runfile('/home/sebastian/.config/spyder-py3/temp.py', wdir='/home/sebastian/.config/spyder-py3')
 debugfile('/home/sebastian/.config/spyder-py3/temp.py', wdir='/home/sebastian/.config/spyder-py3')
 import os
@@ -977,3 +973,52 @@ runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/se
 debugfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/linearRegression.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled1.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Jun  8 10:08:37 2022)---
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+warper.GetOutputSpacing
+warper.GetOutputSpacing()
+warper.GetOutputOrigin()
+warper.GetInterpolator()
+warper.GetOutputSize()
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+im_array = sitk.GetArrayFromImage(DFM)
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Jun  8 11:35:25 2022)---
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Wed Jun  8 13:15:07 2022)---
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/display.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')

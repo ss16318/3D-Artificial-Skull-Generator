@@ -162,3 +162,43 @@ def displayGrid(Grid,Im,Title):
     plt.show()
     
     return
+
+def displayMag( im_array , im2 , Title ):
+
+    plt.figure()                                              #creates figure for plot
+    plt.imshow( (im_array)[int(im_array.shape[0]/2), :, :] , cmap='Reds')   #takes halfway slice of transverse view
+    cbar  = plt.colorbar() 
+    plt.clim(0,8)
+    plt.imshow((im2)[int(im2.shape[0]/2), :, :],alpha=0.1)
+    ax = plt.gca()                                            #gets plot axis
+    ax.invert_yaxis()                                         #flips y-axis for intuitive view
+    ax.set_ylabel("Slices")                   #y axis label
+    ax.set_xlabel("Slices")                   #x axis label
+    plt.title("(a) " + Title + "")              #adds title to plot                        
+    
+    #same setup for frontal view
+    plt.figure()
+    plt.imshow((im_array)[:, int(im_array.shape[1]/2) ,:],cmap='Reds')   
+    cbar  = plt.colorbar()    
+    plt.clim(0,8)
+    plt.imshow((im2)[:, int(im2.shape[1]/2), :],alpha=0.1)
+    ax = plt.gca()                                            #gets plot axis
+    ax.invert_yaxis()                                         #flips y-axis for intuitive view
+    ax.set_ylabel("Slices")                   #y axis label
+    ax.set_xlabel("Slices")                   #x axis label
+    plt.title("(b) " + Title + "")
+    
+    #same setup for saggital view
+    plt.figure()
+    plt.imshow((im_array)[:, :, int(im_array.shape[2]/2)],cmap='Reds')
+    cbar  = plt.colorbar()    
+    plt.clim(0,8)
+    plt.imshow((im2)[:, :, int(im2.shape[0]/2)],alpha=0.1)   
+    ax = plt.gca()                                            #gets plot axis
+    ax.invert_yaxis()                                         #flips y-axis for intuitive view
+    ax.set_ylabel("Slices")                   #y axis label
+    ax.set_xlabel("Slices")                   #x axis label
+    cbar.ax.set_ylabel("Deformation Magnitude (mm)" , fontsize = 10)
+    plt.title("(c) " + Title + "")
+    
+    return plt.show()         

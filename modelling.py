@@ -50,18 +50,20 @@ b = np.full((numPC,numIms),1000)
 for i in range(numIms):     #each skull to be generated
     for x in range(numPC):  #loops through each element of random parameter vector 
     
-        # imposes that element lies within 3 std dev of eigenvector variation
-        while abs(b[x,i]) > 3*np.sqrt(S[x]):    
-            # element set to value from Gaussian distribution w/ eigenvalue variance          
-            b[x,i] = np.random.normal( 0 , L[x] )
+        # # imposes that element lies within 3 std dev of eigenvector variation
+        # while abs(b[x,i]) > 3*np.sqrt(S[x]):    
+        #     # element set to value from Gaussian distribution w/ eigenvalue variance          
+        #     b[x,i] = np.random.normal( 0 , L[x] )
+        
+        b[x,i] = np.sqrt(L[x])
 
 #multiplies random parameter vector with principal eigenvectors
 residualDef = np.matmul(U[:,0:numPC],b)  
 
 # Create transform parameter file
 for x in range(numIms):
-    newTP(average + residualDef[:,x])  #function creates transform paramter file with new control pt deformations
-
+    #newTP(average + residualDef[:,x])  #function creates transform paramter file with new control pt deformations
+    newTP(residualDef[:,x])
     # Artificial skull reconstruction 
     artificialSkull= reconstruct()   #deforms model image using DFM reconstruction from new pm
 
