@@ -1,34 +1,3 @@
-runfile('/home/sebastian/.config/spyder-py3/temp.py', wdir='/home/sebastian/.config/spyder-py3')
-debugfile('/home/sebastian/.config/spyder-py3/temp.py', wdir='/home/sebastian/.config/spyder-py3')
-import os
-import os.path                          # allows script to read paths
-import gc                               # allows computer to handle memory (gc = garbage collector)
-import numpy as np
-import SimpleITK as sitk
-import matplotlib.pyplot as plt
-runfile('/home/sebastian/.config/spyder-py3/test1.py', wdir='/home/sebastian/.config/spyder-py3')
-
-## ---(Tue Nov 23 18:31:45 2021)---
-runfile('/home/sebastian/.config/spyder-py3/test1.py', wdir='/home/sebastian/.config/spyder-py3')
-
-## ---(Tue Nov 23 18:34:00 2021)---
-runfile('/home/sebastian/.config/spyder-py3/test1.py', wdir='/home/sebastian/.config/spyder-py3')
-
-## ---(Tue Nov 23 18:35:31 2021)---
-runfile('/home/sebastian/.config/spyder-py3/test1.py', wdir='/home/sebastian/.config/spyder-py3')
-
-## ---(Tue Nov 23 18:39:07 2021)---
-runfile('/home/sebastian/.config/spyder-py3/test1.py', wdir='/home/sebastian/.config/spyder-py3')
-
-## ---(Wed Nov 24 12:19:20 2021)---
-runfile('/home/sebastian/.config/spyder-py3/test1.py', wdir='/home/sebastian/.config/spyder-py3')
-
-## ---(Wed Nov 24 12:23:29 2021)---
-runfile('/home/sebastian/.config/spyder-py3/display.py', wdir='/home/sebastian/.config/spyder-py3')
-runfile('/home/sebastian/.config/spyder-py3/test1.py', wdir='/home/sebastian/.config/spyder-py3')
-
-## ---(Wed Nov 24 12:24:34 2021)---
-runfile('/home/sebastian/.config/spyder-py3/display.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/test1.py', wdir='/home/sebastian/.config/spyder-py3')
 
 ## ---(Thu Nov 25 09:25:38 2021)---
@@ -1022,3 +991,17 @@ debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.c
 runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
 debugfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
 runfile('/home/sebastian/.config/spyder-py3/test.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+debugfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+display(corrupted,"")
+dislpay(corrupt,"")
+display(corrupt,"")
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')
+
+## ---(Thu Jun  9 16:05:06 2022)---
+runfile('/home/sebastian/.config/spyder-py3/Frequency.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/modelling.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/Clustering.py', wdir='/home/sebastian/.config/spyder-py3')
+runfile('/home/sebastian/.config/spyder-py3/untitled0.py', wdir='/home/sebastian/.config/spyder-py3')

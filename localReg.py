@@ -30,10 +30,10 @@ def ffd ( im , alpha3D, num):
     FFDIm = elastixImageFilter.GetResultImage()         #resulting image from FFD
     
     # #Saves each transform parameter text file into Parameter folder
-    # original = r'TransformParameters.0.txt'
-    # target = r'/home/sebastian/.config/spyder-py3/Parameters3/tp' + str(num+113) + '.txt'
+    original = r'TransformParameters.0.txt'
+    target = r'/home/sebastian/.config/spyder-py3/Parameters2/tp50.txt'
     
-    # shutil.copyfile(original,target)   #copies original data and saves in target
+    shutil.copyfile(original,target)   #copies original data and saves in target
                                            
     return FFDIm
   

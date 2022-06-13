@@ -53,7 +53,7 @@ for x in range(centredTest.shape[1]):
             
         PC[n,x] = n+1
         
-for n in range(params.shape[0]):
+# for n in range(params.shape[0]):
     
     #show paramter distriubtion for each PC
     plt.hist(params[n,:])
@@ -68,7 +68,7 @@ x = np.ravel(params)
 y = np.ravel(PC)
 
 #count number of points within 3 standard deviations 
-insideRange = np.sum( abs(x) <= 3)
+insideRange = np.sum( abs(x) <= 1)
 proportionIn = insideRange*100 / len(x)
 
 #component-wise scatter plot

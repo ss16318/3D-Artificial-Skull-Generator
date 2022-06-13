@@ -44,14 +44,14 @@ for x in range(trainDef.shape[0]):  #loop through each training skull
         #reproject each CPD by each PC
         reproj[x,j] = np.matmul (trainDef[x,:] , U[:,j] ) 
 
-C = 2   #number of clusters chosen
+C = 5   #number of clusters chosen
 
 #cluster and label the raw CPD data
 kmeansRaw = KMeans(n_clusters=C, random_state=0).fit(trainDef)
 labelsRaw = kmeansRaw.fit_predict(trainDef)
 
 #count number of data points in a cluster
-count = np.where(labelsPCA==2)
+count = np.where(labelsRaw==0)
  
 centres = kmeansRaw.cluster_centers_    #get location of centroids   
 
@@ -67,7 +67,7 @@ for x in range (numPC):     #loops through all PCs
 #plot the distance between inner products
 plt.bar(range(1,37),theta)
 ax = plt.gca()
-ax.set_ylabel("Inner Product")
+ax.set_ylabel("Dot Product")
 ax.set_xlabel("Principal Component")
 plt.show()
 
